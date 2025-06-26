@@ -3,289 +3,214 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Memory Mate – Capture Your AI Genius</title>
+  <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
-      background: #fff;
-      color: #1a2a1a;
-      min-height: 100vh;
-      scroll-behavior: smooth;
       margin: 0;
+      font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+      color: #1a2a1a;
+      background: #fff;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px) scale(0.98);
-      animation: fadeInUp 0.8s cubic-bezier(.42,0,.58,1) forwards;
+    h1,h2,h3,h4,p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      padding: 1rem 0;
     }
-    .fade-in-1 { animation-delay: 0.08s; }
-    .fade-in-2 { animation-delay: 0.18s; }
-    .fade-in-3 { animation-delay: 0.28s; }
-    .fade-in-4 { animation-delay: 0.42s; }
-    .fade-in-5 { animation-delay: 0.54s; }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: none; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
+    .nav-links { display: none; gap: 2rem; }
+    @media (min-width: 640px) { .nav-links { display: flex; } }
     .btn-primary {
       background: #4CAF50;
       color: #fff;
       font-weight: 600;
       border-radius: 0.75rem;
-      padding: 0.75rem 2.25rem;
-      font-size: 1.15rem;
-      box-shadow: 0 2px 18px rgba(76,175,80,0.09);
+      padding: 0.65rem 1.8rem;
+      font-size: 1rem;
       transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
+      display: inline-block;
     }
     .btn-primary:hover, .btn-primary:focus-visible {
       background: #45a049;
       box-shadow: 0 4px 24px rgba(69,160,73,0.14);
       transform: translateY(-2px) scale(1.02);
     }
-    .section-divider {
-      border-bottom: 1px solid #e5e7ea;
-      margin: 2.5rem 0 2rem 0;
-    }
-    .card-feature {
-      background: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 1px 10px rgba(69,160,73,0.06);
-      border: 1px solid #e6f4ea;
-      transition: box-shadow 0.18s, border 0.18s, transform 0.13s;
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      cursor: pointer;
+    .hero {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      gap: 1rem;
-      max-width: 260px;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      padding: 3rem 0 4rem;
     }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-    }
-    .card-feature:hover {
-      border: 1.5px solid #4CAF50;
-      box-shadow: 0 4px 26px rgba(76,175,80,0.13);
-      transform: translateY(-3px) scale(1.012);
-    }
-    .card-feature:hover .icon-circle {
-      background: #4CAF50;
-      color: #fff;
-    }
+    .hero-text { flex: 1 1 420px; }
+    .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .hero-img { flex: 1 1 380px; text-align: center; }
+    .hero-img img { width: 100%; max-width: 420px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .section { padding: 4rem 0; }
+    .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .step { flex: 1 1 280px; text-align: center; }
     .icon-circle {
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
+      width: 48px; height: 48px;
       border-radius: 999px;
       background: #e9faee;
       color: #4CAF50;
-      margin-bottom: 0.3rem;
-      transition: background 0.18s, color 0.18s;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
     }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .card-feature {
+      background: #fff;
+      border: 1px solid #e6f4ea;
+      border-radius: 1rem;
+      padding: 1.75rem 1.25rem;
+      box-shadow: 0 1px 8px rgba(69,160,73,0.06);
+      transition: box-shadow 0.18s, transform 0.13s;
+    }
+    .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
+    .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+    .testimonial { flex: 1 1 300px; display: flex; gap: 1rem; }
+    .testimonial img { width: 44px; height: 44px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .testimonial-bubble {
       background: #e9faee;
-      color: #1a2a1a;
-      border-radius: 1.2rem 1.2rem 1.2rem 0.3rem;
-      padding: 1.2rem 1.6rem;
-      font-size: 1.05rem;
+      border-radius: 1rem 1rem 1rem 0.3rem;
+      padding: 1rem 1.2rem;
       box-shadow: 0 2px 8px rgba(76,175,80,0.08);
-      margin-bottom: 0.7rem;
-      max-width: 420px;
+      font-size: 0.95rem;
     }
-    h1 { margin: 0; }
-    .footer-bg {
-      background: linear-gradient(90deg, #e9faee 60%, #f7fdf8 100%);
-      border-top: 1.5px solid #e6f4ea;
-    }
-    @media (max-width: 900px) {
-      .how-steps { flex-direction: column; gap: 2.4rem; align-items: center; }
-    }
+    footer { background: linear-gradient(90deg, #e9faee 60%, #f7fdf8 100%); border-top: 1px solid #e6f4ea; padding: 2rem 0; margin-top: 4rem; }
+    footer .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    footer .bottom { margin-top: 1rem; color: #555; font-size: 0.85rem; }
     @media (max-width: 640px) {
-      .hero-content { flex-direction: column; align-items: center; text-align: center; }
-      .hero-illustration { margin-top: 2rem; display: flex; justify-content: center; }
+      .hero-text { text-align: center; }
+      .nav-links { display: none; }
     }
-    .hero-illustration img { max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
   </style>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="relative min-h-screen bg-white flex flex-col">
-  <header class="w-full max-w-7xl mx-auto px-6 flex items-center justify-between pt-6 pb-2 fade-in fade-in-1">
-    <div class="flex items-center gap-3">
-      <img src="logo/icon-48.png" alt="The Memory Mate" width="44" height="44" class="rounded-full" style="box-shadow:0 2px 10px rgba(76,175,80,0.06);">
-      <span class="text-2xl font-semibold tracking-tight text-[#4CAF50]">Memory Mate</span>
-    </div>
-    <div class="hidden sm:flex gap-8 items-center">
-      <a href="#how" class="text-[#45a049] font-medium hover:underline transition">How it Works</a>
-      <a href="#features" class="text-[#45a049] font-medium hover:underline transition">Features</a>
-      <a href="#testimonials" class="text-[#45a049] font-medium hover:underline transition">Testimonials</a>
-      <a href="#download" class="btn-primary text-base px-5 py-2.5">Add to Chrome</a>
-    </div>
+<body>
+  <header class="container">
+    <nav>
+      <div class="flex items-center gap-2">
+        <img src="logo/icon-48.png" width="40" height="40" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
+        <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
+      </div>
+      <div class="nav-links">
+        <a href="#how">How it Works</a>
+        <a href="#features">Features</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#download" class="btn-primary">Add to Chrome</a>
+      </div>
+    </nav>
   </header>
-  <main class="flex-1 w-full max-w-7xl mx-auto px-6">
-    <section class="w-full flex flex-col-reverse md:flex-row items-center md:justify-between pt-8 md:pt-16 gap-8 md:gap-12 fade-in fade-in-2 hero-content">
-      <div class="max-w-xl flex flex-col gap-6 md:gap-8 text-center md:text-left">
-        <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">Never Lose a Brilliant Answer Again</h1>
-        <p class="text-lg md:text-xl text-gray-700">Unlock perfect recall—capture, organise and retrieve your best AI insights forever.</p>
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-2">
-          <a id="download" href="#" class="btn-primary text-lg shadow-lg fade-in fade-in-3">Add to Chrome — It’s Free</a>
-          <span class="ml-1 text-gray-500 text-base flex items-center gap-1 fade-in fade-in-4">
-            <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#4CAF50"></circle><path d="M8.1 13.7l-2.8-2.8 1.4-1.4 1.4 1.4 4-4 1.4 1.4-5.4 5.4z" fill="#fff"></path></svg>
-            Trusted by 1,000+ smart professionals
-          </span>
-        </div>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Every Genius Answer, One Click Away</h1>
+        <p>The Memory Mate saves, organises and surfaces your favourite AI replies so you never lose a spark of insight.</p>
+        <a href="#" class="btn-primary">Add to Chrome — It's Free</a>
       </div>
-      <div class="w-full flex justify-center items-center md:w-auto fade-in fade-in-3 hero-illustration">
-        <img src="screenshots/screenshot1.png" alt="The Memory Mate screenshot" class="rounded-xl shadow-lg w-full max-w-md mx-auto md:mx-0">
+      <div class="hero-img">
+        <img src="screenshots/screenshot1.png" alt="Extension screenshot">
       </div>
     </section>
-    <div class="section-divider"></div>
-    <section id="how" class="w-full py-1 fade-in fade-in-2">
-      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">How The Memory Mate Works</h2>
-      <div class="flex flex-row how-steps gap-8 md:gap-12">
-        <div class="flex flex-col items-center text-center max-w-xs fade-in fade-in-3">
-          <div class="icon-circle mb-2">
-            <svg width="34" height="34" viewBox="0 0 34 34"><ellipse cx="17" cy="17" rx="14" ry="13" fill="#fff" stroke="#4CAF50" stroke-width="2"></ellipse><circle cx="17" cy="14" r="3" fill="#4CAF50" opacity="0.8"></circle><rect x="22" y="7" width="6" height="8" rx="2" fill="#4CAF50" stroke="#45a049" stroke-width="1"></rect><path d="M24 9V13L25.8 11.7L28 13V9" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-1">See. Save. Smile.</h3>
-          <p class="text-gray-600 text-base">Spot a genius answer? One tap stores it forever—no distractions, no friction.</p>
+    <section id="how" class="section">
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">How It Works</h2>
+      <div class="how-steps" style="margin-top:2rem;">
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="save"></i></div>
+          <h3>Capture Instantly</h3>
+          <p>A single click stores any answer from ChatGPT, Gemini, Claude or Perplexity.</p>
         </div>
-        <div class="flex flex-col items-center text-center max-w-xs fade-in fade-in-4">
-          <div class="icon-circle mb-2">
-            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="6" y="13" width="22" height="14" rx="4" fill="#fff" stroke="#4CAF50" stroke-width="2"></rect><rect x="10" y="8" width="8" height="8" rx="2" fill="#4CAF50" stroke="#45a049" stroke-width="1"></rect><path d="M16 8l2.5 4" stroke="#45a049" stroke-width="1.2"></path></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-1">Organise Effortlessly</h3>
-          <p class="text-gray-600 text-base">Group answers by project so every idea lives where it belongs.</p>
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="folder-open"></i></div>
+          <h3>Organise Effortlessly</h3>
+          <p>Drop clips into projects for tidy research and friction‑free retrieval.</p>
         </div>
-        <div class="flex flex-col items-center text-center max-w-xs fade-in fade-in-5">
-          <div class="icon-circle mb-2">
-            <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="#fff" stroke="#4CAF50" stroke-width="2"></circle><path d="M17 22l3.5-6h-2.5l2-6-6 8h3l-2 4z" fill="#4CAF50"></path><circle cx="24" cy="24" r="5" fill="#e9faee" stroke="#45a049" stroke-width="1.2"></circle><path d="M27 27l3 3" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"></path></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-1">Retrieve in Seconds</h3>
-          <p class="text-gray-600 text-base">Powerful search finds any clip instantly—never scroll endlessly again.</p>
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="search"></i></div>
+          <h3>Find Anything</h3>
+          <p>Powerful search and timestamps help you recall any snippet in seconds.</p>
         </div>
       </div>
     </section>
-    <div class="section-divider"></div>
-    <section id="features" class="w-full py-1 fade-in fade-in-3">
-      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">Why You’ll Love The Memory Mate</h2>
+    <section id="features" class="section">
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You'll Love The Memory Mate</h2>
       <div class="feature-grid">
-        <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="#4CAF50" opacity="0.13"></rect><path d="M5 5v14h14V5H5zm7 1v6m0 0l3-3m-3 3l-3-3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-          <h4 class="font-semibold text-lg mb-1">One‑Click Capture</h4>
-          <p class="text-gray-600 text-base">Save answers from ChatGPT, Gemini, Claude or Perplexity instantly.</p>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">One‑Click Capture</h4>
+          <p>Save the best AI answers without clutter or copy‑paste hassle.</p>
         </div>
-        <div class="card-feature fade-in fade-in-5">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2" fill="#4CAF50" opacity="0.13"></rect><path d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2" stroke="#4CAF50" stroke-width="1.7"></path><rect x="8" y="11" width="8" height="5" rx="1" fill="#4CAF50" opacity="0.17"></rect></svg></div>
-          <h4 class="font-semibold text-lg mb-1">Project Organisation</h4>
-          <p class="text-gray-600 text-base">Keep knowledge tidy and accessible—no more chaotic bookmarks.</p>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Project Organisation</h4>
+          <p>Keep research neatly grouped by client, course or topic.</p>
         </div>
-        <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="#4CAF50" opacity="0.13"></circle><circle cx="11" cy="11" r="7" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M21 21l-4.3-4.3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
-          <h4 class="font-semibold text-lg mb-1">AI‑Powered Search</h4>
-          <p class="text-gray-600 text-base">Find what you need before you finish typing.</p>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Auto‑Source & Timestamp</h4>
+          <p>Every clip remembers where and when it came from.</p>
         </div>
-        <div class="card-feature fade-in fade-in-5">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4CAF50" opacity="0.13"></circle><path d="M2 16a10 10 0 0014-14" stroke="#4CAF50" stroke-width="1.7"></path><path d="M15 10.25a5.5 5.5 0 11-3.5-8.5" stroke="#4CAF50" stroke-width="1.7"></path><rect x="14" y="14" width="7" height="7" rx="2" fill="#4CAF50" opacity="0.17"></rect></svg></div>
-          <h4 class="font-semibold text-lg mb-1">Cross‑Platform Power</h4>
-          <p class="text-gray-600 text-base">Access your memory vault anywhere, on any device.</p>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Import & Export</h4>
+          <p>Bring in old notes or share entire projects as TXT, HTML or Word.</p>
         </div>
-        <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="4" fill="#4CAF50" opacity="0.13"></rect><path d="M12 15v2m0-2a2 2 0 100-4 2 2 0 000 4zm0-4v-2m0 10a8 8 0 100-16 8 8 0 000 16z" stroke="#4CAF50" stroke-width="1.7"></path></svg></div>
-          <h4 class="font-semibold text-lg mb-1">Ironclad Privacy</h4>
-          <p class="text-gray-600 text-base">Your data remains yours—fully encrypted, never shared.</p>
-        </div>
-        <div class="card-feature fade-in fade-in-5">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M5 6h14v12H5z" fill="#4CAF50" opacity="0.13"/><path d="M5 6h14v12H5z" stroke="#4CAF50" stroke-width="1.7"/><path d="M9 10h6M9 14h6" stroke="#4CAF50" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <h4 class="font-semibold text-lg mb-1">Auto-Source &amp; Timestamp</h4>
-          <p class="text-gray-600 text-base">Know exactly where and when every snippet came from.</p>
-        </div>
-        <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M4 5h16v14H4z" fill="#4CAF50" opacity="0.13"/><path d="M4 5h16v14H4z" stroke="#4CAF50" stroke-width="1.7"/><path d="M9 9h6v6H9z" stroke="#4CAF50" stroke-width="1.5"/><path d="M14 12h6M10 12H4" stroke="#4CAF50" stroke-width="1.5"/></svg></div>
-          <h4 class="font-semibold text-lg mb-1">Import &amp; Export</h4>
-          <p class="text-gray-600 text-base">Bring in past notes or export projects to TXT, HTML or Word.</p>
-        </div>
-        </div>
-      <div class="mt-12 flex flex-col gap-2 fade-in fade-in-5">
-        <div class="flex flex-wrap items-center gap-3 text-gray-700 text-base">
-          <span class="font-medium">Built by productivity fanatics and trusted by top professionals worldwide.</span>
-          <span class="inline-block w-1 h-1 rounded-full bg-[#4CAF50]"></span>
-          <span>Join <span class="font-semibold text-[#4CAF50]">1,000+</span> knowledge workers who’ve already upgraded their brains.</span>
-        </div>
-        <div class="flex flex-wrap items-center gap-3 text-[#45a049] text-base mt-1">
-          <span>Every minute, priceless insights vanish forever. <span class="font-semibold text-[#4CAF50]">Don’t let yours disappear.</span></span>
-          <span class="inline-block w-1 h-1 rounded-full bg-[#4CAF50]"></span>
-          <span class="font-semibold">Free for early adopters</span> — secure your spot before premium plans arrive.
-        </div>
-        <div class="flex flex-wrap items-center gap-3 text-gray-700 text-base mt-1">
-          <span class="font-semibold text-[#4CAF50]">Your competitors are already building smarter brains. Are you?</span>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Cross‑Platform Power</h4>
+          <p>Your knowledge vault syncs across devices—always within reach.</p>
         </div>
       </div>
     </section>
-    <div class="section-divider"></div>
-    <section id="testimonials" class="w-full py-3 fade-in fade-in-4">
-      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">Real Users, Real Results</h2>
-      <div class="flex flex-col md:flex-row gap-8 md:gap-10">
-        <div class="flex items-start gap-3 fade-in fade-in-4">
-          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Sarah M." class="rounded-full" width="44" height="44">
+    <section id="testimonials" class="section" style="padding-top:0;">
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Real Users, Real Results</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Sarah">
           <div>
-            <div class="testimonial-bubble">Memory Mate is a lifesaver—I finally stopped losing great answers!</div>
-            <div class="text-[#45a049] font-medium">– Sarah M., AI Researcher</div>
+            <div class="testimonial-bubble">"Memory Mate is a lifesaver—I finally stopped losing great answers!"</div>
+            <div style="color:#45a049;font-weight:500;">– Sarah M., AI Researcher</div>
           </div>
         </div>
-        <div class="flex items-start gap-3 fade-in fade-in-5">
-          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="John D." class="rounded-full" width="44" height="44">
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="John">
           <div>
-            <div class="testimonial-bubble">I used to waste hours searching old chats. Now it’s all one click away.</div>
-            <div class="text-[#45a049] font-medium">– John D., Consultant</div>
+            <div class="testimonial-bubble">"Hours of scrolling, gone. Now my best chats are exactly where I need them."</div>
+            <div style="color:#45a049;font-weight:500;">– John D., Consultant</div>
           </div>
         </div>
-        <div class="flex items-start gap-3 fade-in fade-in-6">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Maya K." class="rounded-full" width="44" height="44">
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Maya">
           <div>
-            <div class="testimonial-bubble">The best Chrome extension for anyone who uses AI daily. Genius!</div>
-            <div class="text-[#45a049] font-medium">– Maya K., Marketer</div>
+            <div class="testimonial-bubble">"The simplest way to build a second brain for my AI research."</div>
+            <div style="color:#45a049;font-weight:500;">– Maya K., Marketer</div>
           </div>
         </div>
       </div>
     </section>
-    <div class="section-divider"></div>
-    <section class="w-full py-10 flex flex-col items-center justify-center fade-in fade-in-5">
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4 text-center">Supercharge Your Memory — Free Forever</h2>
-      <a href="#" class="btn-primary text-lg shadow-lg mt-2 fade-in fade-in-6">Add to Chrome Now</a>
-      <div class="mt-3 text-gray-600 text-base text-center">Upgrade to Premium anytime. No credit card required.</div>
-      <div class="mt-1 text-gray-700 text-base text-center">Join <span class="font-semibold text-[#4CAF50]">1,000+</span> users already building a smarter memory.</div>
-      <span class="mt-3 inline-flex items-center gap-1 text-[#45a049]">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#4CAF50"></circle><text x="5.6" y="15" font-size="13" fill="#fff" font-family="Inter,sans-serif" font-weight="bold">★</text></svg>
-        4.9 on Chrome Web Store
-      </span>
+    <section class="section" id="download" style="text-align:center;padding-top:0;">
+      <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Supercharge Your Memory — Free Forever</h2>
+      <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome Now</a>
+      <p style="margin-top:1rem;color:#555;">Upgrade to Premium anytime. No credit card required.</p>
     </section>
   </main>
-  <footer class="footer-bg mt-12 py-8 px-6">
-    <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-2">
-      <div class="flex gap-5 text-gray-600 text-base">
-        <a href="#" class="hover:text-[#4CAF50] hover:underline transition">Privacy Policy</a>
-        <a href="#" class="hover:text-[#4CAF50] hover:underline transition">Terms</a>
-        <a href="#" class="hover:text-[#4CAF50] hover:underline transition">Contact</a>
+  <footer>
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
       </div>
-      <div class="text-gray-500 text-sm mt-2 md:mt-0">© 2025 The Memory Mate. Built for thinkers, creators and doers.</div>
+      <div class="bottom">© 2025 The Memory Mate. Built for thinkers, creators and doers.</div>
     </div>
   </footer>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.querySelectorAll('.fade-in').forEach(el => {
-          el.style.animationPlayState = 'running';
-        });
-      }, 120);
-    });
     if (window.lucide) lucide.createIcons();
   </script>
 </body>
