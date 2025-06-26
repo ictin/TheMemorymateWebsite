@@ -61,7 +61,7 @@
     .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
     .hero-img { flex: 1 1 380px; text-align: center; position: relative; }
-    .hero-img img { width: 100%; max-width: 420px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .hero-img img { width: 100%; max-width: 520px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
     .section { padding: 4rem 0; }
     .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
     .step { flex: 1 1 280px; text-align: center; }
@@ -84,7 +84,7 @@
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
     .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
-    .feature-shots img { width: 100%; max-width: 340px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .feature-shots img { width: 100%; max-width: 400px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
     .testimonial { flex: 1 1 300px; display: flex; gap: 1rem; }
     .testimonial img { width: 44px; height: 44px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
@@ -133,7 +133,7 @@
   <header class="container">
     <nav>
       <div class="flex items-center gap-2">
-        <img src="logo/icon-48.png" width="40" height="40" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
+        <img src="logo/icon-48.png" width="56" height="56" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
         <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
       </div>
       <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('main-menu').classList.toggle('open');">&#9776;</button>
@@ -184,17 +184,47 @@
       <ul class="benefits" style="list-style:none;padding:0;margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
         <li><h3>Works Everywhere</h3><p>ChatGPT, Gemini, Claude & more.</p></li>
       </ul>
-      <div style="margin-top:3rem;text-align:center;">
-        <h3 style="font-weight:600;margin-bottom:1rem;">Roadmap to 100× Productivity</h3>
-        <div class="feature-grid" style="margin-top:1rem;">
-          <div class="card-feature"><h4>One‑Click Notion & Obsidian Sync</h4><p>Keep your projects mirrored in your favorite apps.</p></div>
-          <div class="card-feature"><h4>Smart Tags Everywhere</h4><p>Laser-fast search and cross-cut views.</p></div>
-          <div class="card-feature"><h4>Instant Prompt Injection</h4><p>Drop any snippet into chat with zero copy‑paste.</p></div>
-          <div class="card-feature"><h4>Auto-Surfaced Snippets</h4><p>RAG-powered assistant feeds answers from your vault.</p></div>
+      <section id="roadmap" class="roadmap" style="margin-top:3rem;text-align:center;">
+        <div class="urgency" style="margin-top:0; margin-bottom:1.5rem;">
+          <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
         </div>
-        <p style="margin-top:1rem;font-size:0.95rem;">Vote on next features—first 5 000 users shape what ships.</p>
-        <p style="margin-top:1.5rem;"><a href="#" class="btn-primary">Unlock Pro Features</a></p>
-      </div>
+        <h3 style="font-weight:600;margin-bottom:1rem;">Your Path to 100× Productivity</h3>
+        <p class="lead" style="max-width:660px;margin:0 auto 1.5rem;">We publish our roadmap so you always know where Memory Mate is headed—and you can vote features forward. Join early to shape the future.</p>
+
+        <div class="roadmap-row" style="text-align:left;">
+          <h3>🚀 Live Now</h3>
+          <ul>
+            <li><strong>One-Click Capture</strong> – Save any ChatGPT, Gemini, or Claude reply.</li>
+            <li><strong>Smart Tags & Projects</strong> – Auto-organised, zero manual filing.</li>
+            <li><strong>Lightning Search (< 1 s)</strong> – Retrieve answers faster than Ctrl + F.</li>
+            <li><strong>Private Vault</strong> – End-to-end encryption; your data, your rules.</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-row now-next" style="text-align:left;">
+          <h3>🟢 Next Up (Q3 2025)</h3>
+          <ul>
+            <li><strong>AI Summaries</strong> – One-sentence recaps auto-generated for every clip.</li>
+            <li><strong>Cross-Device Sync</strong> – Chrome, Edge, and mobile in perfect harmony.</li>
+            <li><strong>One-Click Export</strong> – Push highlights to Notion & Google Docs.</li>
+            <li><strong>Dark-Mode HUD</strong> – Save answers without breaking focus at night.</li>
+          </ul>
+          <p class="cta-note"><em>Vote in-product to move features higher—first 5 000 installers steer priority.</em></p>
+        </div>
+
+        <div class="roadmap-row" style="text-align:left;">
+          <h3>🔭 Later (2025 +)</h3>
+          <ul>
+            <li><strong>Team Workspaces</strong> – Shared vaults with role-based permissions.</li>
+            <li><strong>Ask-Your-Vault AI</strong> – Chat with your saved knowledge for instant answers.</li>
+            <li><strong>Automated Source Citations</strong> – One-click copy of original prompt & link.</li>
+            <li><strong>Offline Mode</strong> – Access your genius even without internet.</li>
+          </ul>
+        </div>
+
+        <p style="margin-top:1.5rem;"><a href="#" class="btn-primary">Add to Chrome — Free Forever</a></p>
+        <small class="microcopy">Zero forms. 10-second install. Shape the roadmap today.</small>
+      </section>
     </section>
     <section id="testimonials" class="section" style="padding-top:0;">
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Join 2&nbsp;300+ creators who reclaimed their genius.</h2>
@@ -209,9 +239,6 @@
         </blockquote>
       </div>
     </section>
-    <div class="urgency">
-      <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
-    </div>
     <section class="section" id="download" style="text-align:center;padding-top:0;">
       <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready to lock in every breakthrough?</h2>
       <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome — Free Forever</a>
