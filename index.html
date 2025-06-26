@@ -105,9 +105,8 @@
     }
     @media (max-width: 640px) {
       .hero-content { flex-direction: column; align-items: center; text-align: center; }
-      .hero-illustration { margin-top: 2rem; }
-    }
-    .hero-illustration img { max-width: 100%; height: auto; }
+      .hero-illustration { margin-top: 2rem; display: flex; justify-content: center; }
+    .hero-illustration img { max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -171,7 +170,7 @@
     <div class="section-divider"></div>
     <section id="features" class="w-full py-1 fade-in fade-in-3">
       <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-8">Why You’ll Love The Memory Mate</h2>
-      <div class="grid feature-grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      <div class="grid feature-grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
         <div class="card-feature fade-in fade-in-4">
           <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="#4CAF50" opacity="0.13"></rect><path d="M5 5v14h14V5H5zm7 1v6m0 0l3-3m-3 3l-3-3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
           <h4 class="font-semibold text-lg mb-1">One‑Click Capture</h4>
