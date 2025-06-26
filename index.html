@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
+  <meta name="description" content="Save your favorite AI chatbot answers in one click. Memory Mate organizes, tags and finds them instantly, boosting productivity and building your second brain.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
@@ -28,8 +29,11 @@
       align-items: center;
       gap: 1rem;
     }
-    .nav-links { display: none; gap: 2rem; }
-    @media (min-width: 640px) { .nav-links { display: flex; } }
+    .menu { display: none; position: absolute; right: 1rem; top: 60px; background: #fff; border: 1px solid #e6f4ea; border-radius: 0.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 0.75rem 1rem; }
+    .menu a { display: block; padding: 0.25rem 0; }
+    .menu.open { display: block; }
+    .nav-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+    @media (min-width: 640px) { .menu { display: flex !important; position: static; background: none; border: none; box-shadow: none; flex-direction: row; gap: 2rem; } .menu a { padding: 0; } }
     .btn-primary {
       background: #4CAF50;
       color: #fff;
@@ -121,7 +125,7 @@
         flex-direction: column-reverse;
       }
       .hero-text { text-align: center; }
-      .nav-links { display: none; }
+      .menu { display: none; }
     }
   </style>
 </head>
@@ -132,29 +136,30 @@
         <img src="logo/icon-48.png" width="40" height="40" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
         <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
       </div>
-      <div class="nav-links">
-        <a href="#how">How it Works</a>
-        <a href="#features">Features</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#download" class="btn-primary">Add to Chrome</a>
-      </div>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('main-menu').classList.toggle('open');">&#9776;</button>
+      <ul id="main-menu" class="menu">
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#download" class="btn-primary">Add to Chrome</a></li>
+      </ul>
     </nav>
   </header>
   <main class="container">
     <section class="hero">
       <div class="hero-text">
-        <h1>Turn Every AI Insight into Lifelong Memory</h1>
-        <p>Clip any chatbot answer in one click. Search it in a heartbeat. Act on it before your coffee cools.</p>
+        <h1>Save Any AI Answer. Find It Instantly—Forever.</h1>
+        <p>Clip any reply once. Retrieve it in under a second—even weeks later.</p>
         <a href="#" class="btn-primary">Add to Chrome — Free Forever</a>
-        <small>No sign-up. Installs in 10 seconds.</small>
+        <small>Zero forms. 10-second install.</small>
       </div>
       <div class="hero-img">
-        <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Extension screenshot">
+        <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Memory Mate extension screenshot">
       </div>
     </section>
     <section class="pain-solution" style="text-align:center;padding:2rem 0;">
-      <h2>Tired of scrolling miles of chat history?</h2>
-      <p><strong>Memory Mate</strong> files answers automatically, so you never lose the line of code, marketing hook, or life hack that just changed your day.</p>
+      <h2>Stop Endless Chat-Scrolling.</h2>
+      <p>Clip answers once—retrieve them in < 1 s, even weeks later.</p>
     </section>
     <section id="how" class="section">
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">How It Works</h2>
@@ -164,18 +169,29 @@
         <li><strong>Recall</strong> – Lightning search surfaces it in &lt; 1 s.</li>
       </ol>
     </section>
+    
     <section id="features" class="section">
-      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why Professionals Swear by Memory Mate</h2>
-      <ul class="benefits" style="list-style:none;padding:0;margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
-        <li><h3>Zero-Friction Capture</h3><p>No copy-paste. Stay in flow.</p></li>
-        <li><h3>Project Folders &amp; Tags</h3><p>Ideas sort themselves.</p></li>
-        <li><h3>Blazing Search</h3><p>Find any snippet faster than ⌘F.</p></li>
-        <li><h3>Private &amp; Encrypted</h3><p>Your knowledge, your vault.</p></li>
-        <li><h3>Works Everywhere</h3><p>ChatGPT, Gemini, Claude &amp; more.</p></li>
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You’ll Love Memory Mate</h2>
+      <h3 style="text-align:center;margin-top:2rem;">Core Wins</h3>
+      <ul class="benefits" style="list-style:none;padding:0;margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+        <li><h3>Instant Clip</h3><p>Press once. The answer’s yours—forever.</p></li>
+        <li><h3>Smart Tags</h3><p>No folders to juggle. We tag by topic for you.</p></li>
+        <li><h3>Lightning Search</h3><p>Find any snippet in < 1 s—no digging.</p></li>
+        <li><h3>Private Vault</h3><p>End-to-end encryption. Your data, your rules.</p></li>
+      </ul>
+      <h3 style="text-align:center;margin-top:2rem;">Bonus Wins</h3>
+      <ul class="benefits" style="list-style:none;padding:0;margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+        <li><h3>Works Everywhere</h3><p>ChatGPT, Gemini, Claude & more.</p></li>
       </ul>
       <div style="margin-top:3rem;text-align:center;">
-        <h3 style="font-weight:600;margin-bottom:1rem;">Roadmap to 100x Productivity</h3>
-        <p style="max-width:640px;margin:0 auto;color:#333;">Start with a 10x boost today. Soon you'll push projects straight to Notion, Obsidian or OneNote, tag every answer for instant recall, inject saved snippets directly into new prompts and rely on a built‑in retrieval assistant to surface the perfect quote on demand—turning Memory Mate into your true second brain.</p>
+        <h3 style="font-weight:600;margin-bottom:1rem;">Coming Soon — Help Shape the Roadmap</h3>
+        <div class="feature-grid" style="margin-top:1rem;">
+          <div class="card-feature"><h4>Export to Notion & more</h4><p>Sync projects to Notion, Obsidian, or OneNote in one click.</p></div>
+          <div class="card-feature"><h4>Answer & Project Tags</h4><p>Add quick tags for laser-fast search.</p></div>
+          <div class="card-feature"><h4>Inject into Prompt</h4><p>Insert saved snippets without copy-paste.</p></div>
+          <div class="card-feature"><h4>Built-in RAG Assistant</h4><p>Prompts auto-filled with your own notes.</p></div>
+        </div>
+        <p style="margin-top:1rem;font-size:0.95rem;">Vote on next features—first 5 000 users shape what ships.</p>
         <p style="margin-top:1.5rem;"><a href="#" class="btn-primary">Unlock Pro Features</a></p>
       </div>
     </section>
@@ -193,7 +209,7 @@
       </div>
     </section>
     <div class="urgency">
-      <p><span class="flashing-dot"></span> 1 937 people installed Memory Mate this week. Secure your edge now.</p>
+      <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
     </div>
     <section class="section" id="download" style="text-align:center;padding-top:0;">
       <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready to lock in every breakthrough?</h2>
