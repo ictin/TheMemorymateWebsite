@@ -65,6 +65,9 @@
       text-align: center;
       gap: 1rem;
     }
+    .feature-grid {
+      justify-items: center;
+    }
     .card-feature:hover {
       border: 1.5px solid #4CAF50;
       box-shadow: 0 4px 26px rgba(76,175,80,0.13);
@@ -104,6 +107,7 @@
       .hero-content { flex-direction: column; align-items: center; text-align: center; }
       .hero-illustration { margin-top: 2rem; }
     }
+    .hero-illustration img { max-width: 100%; height: auto; }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -134,7 +138,7 @@
         </div>
       </div>
       <div class="w-full flex justify-center items-center md:w-auto fade-in fade-in-3 hero-illustration">
-        <img src="screenshots/screenshot1.png" alt="The Memory Mate screenshot" class="rounded-xl shadow-lg max-w-xs sm:max-w-sm md:max-w-md">
+        <img src="screenshots/screenshot1.png" alt="The Memory Mate screenshot" class="rounded-xl shadow-lg w-full max-w-md mx-auto">
       </div>
     </section>
     <div class="section-divider"></div>
@@ -204,7 +208,6 @@
           <p class="text-gray-600 text-base">Bring in past notes or export projects to TXT, HTML or Word.</p>
         </div>
         </div>
-      </div>
       <div class="mt-12 flex flex-col gap-2 fade-in fade-in-5">
         <div class="flex flex-wrap items-center gap-3 text-gray-700 text-base">
           <span class="font-medium">Built by productivity fanatics and trusted by top professionals worldwide.</span>
@@ -214,7 +217,7 @@
         <div class="flex flex-wrap items-center gap-3 text-[#45a049] text-base mt-1">
           <span>Every minute, priceless insights vanish forever. <span class="font-semibold text-[#4CAF50]">Don’t let yours disappear.</span></span>
           <span class="inline-block w-1 h-1 rounded-full bg-[#4CAF50]"></span>
-          <span class="font-semibold">Free for early adopters</span> — secure your spot before premium plans arrive.</span>
+          <span class="font-semibold">Free for early adopters</span> — secure your spot before premium plans arrive.
         </div>
         <div class="flex flex-wrap items-center gap-3 text-gray-700 text-base mt-1">
           <span class="font-semibold text-[#4CAF50]">Your competitors are already building smarter brains. Are you?</span>
