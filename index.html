@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+      color: #1a2a1a;
+      background: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      padding: 1rem 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-links { display: none; gap: 2rem; }
+    @media (min-width: 640px) { .nav-links { display: flex; } }
+    .btn-primary {
+      background: #4CAF50;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      padding: 0.65rem 1.8rem;
+      font-size: 1rem;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+      display: inline-block;
+    }
+    .btn-primary:hover, .btn-primary:focus-visible {
+      background: #45a049;
+      box-shadow: 0 4px 24px rgba(69,160,73,0.14);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap-reverse;
+      gap: 2rem;
+      padding: 3rem 0 4rem;
+    }
+    .hero-text { flex: 1 1 420px; }
+    .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .hero-img { flex: 1 1 380px; text-align: center; position: relative; }
+    .hero-img img { width: 100%; max-width: 420px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .section { padding: 4rem 0; }
+    .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .step { flex: 1 1 280px; text-align: center; }
+    .icon-circle {
+      width: 48px; height: 48px;
+      border-radius: 999px;
+      background: #e9faee;
+      color: #4CAF50;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .card-feature {
+      background: #fff;
+      border: 1px solid #e6f4ea;
+      border-radius: 1rem;
+      padding: 1.75rem 1.25rem;
+      box-shadow: 0 1px 8px rgba(69,160,73,0.06);
+      transition: box-shadow 0.18s, transform 0.13s;
+    }
+    .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
+    .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+    .feature-shots img { width: 100%; max-width: 340px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+    .testimonial { flex: 1 1 300px; display: flex; gap: 1rem; }
+    .testimonial img { width: 44px; height: 44px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .testimonial-bubble {
+      background: #e9faee;
+      border-radius: 1rem 1rem 1rem 0.3rem;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(76,175,80,0.08);
+      font-size: 0.95rem;
+    }
+    footer { background: linear-gradient(90deg, #e9faee 60%, #f7fdf8 100%); border-top: 1px solid #e6f4ea; padding: 2rem 0; margin-top: 4rem; }
+    footer .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+    footer .bottom { margin-top: 1rem; color: #555; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+      .hero {
+        flex-direction: column-reverse;
+      }
+      .hero-text { text-align: center; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <div class="flex items-center gap-2">
+        <img src="logo/icon-48.png" width="40" height="40" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
+        <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
+      </div>
+      <div class="nav-links">
+        <a href="#how">How it Works</a>
+        <a href="#features">Features</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#download" class="btn-primary">Add to Chrome</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Every Genius Answer, One Click Away</h1>
+        <p>The Memory Mate saves, organises and surfaces your favourite AI replies so you never lose a spark of insight.</p>
+        <a href="#" class="btn-primary">Add to Chrome — It's Free</a>
+      </div>
+      <div class="hero-img">
+        <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Extension screenshot">
+      </div>
+    </section>
+    <section id="how" class="section">
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">How It Works</h2>
+      <div class="how-steps" style="margin-top:2rem;">
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="save"></i></div>
+          <h3>Capture Instantly</h3>
+          <p>A single click stores any answer from ChatGPT, Gemini, Claude or Perplexity.</p>
+        </div>
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="folder-open"></i></div>
+          <h3>Organise Effortlessly</h3>
+          <p>Drop clips into projects for tidy research and friction‑free retrieval.</p>
+        </div>
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="search"></i></div>
+          <h3>Find Anything</h3>
+          <p>Powerful search and timestamps help you recall any snippet in seconds.</p>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="section">
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You'll Love The Memory Mate</h2>
+      <div class="feature-grid">
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">One‑Click Capture</h4>
+          <p>Save the best AI answers without clutter or copy‑paste hassle.</p>
+        </div>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Project Organisation</h4>
+          <p>Keep research neatly grouped by client, course or topic.</p>
+        </div>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Auto‑Source & Timestamp</h4>
+          <p>Every clip remembers where and when it came from.</p>
+        </div>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Import & Export</h4>
+          <p>Bring in old notes or share entire projects as TXT, HTML or Word.</p>
+        </div>
+        <div class="card-feature">
+          <h4 style="margin-bottom:0.5rem;font-weight:600;">Cross‑Platform Power</h4>
+          <p>Your knowledge vault syncs across devices—always within reach.</p>
+        </div>
+      </div>
+      <div class="feature-shots">
+        <img src="screenshots/screenshot2.png" alt="Organising answers">
+        <img src="screenshots/screenshot3.png" alt="Search and projects overview">
+      </div>
+    </section>
+    <section id="testimonials" class="section" style="padding-top:0;">
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Real Users, Real Results</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Sarah">
+          <div>
+            <div class="testimonial-bubble">"Memory Mate is a lifesaver—I finally stopped losing great answers!"</div>
+            <div style="color:#45a049;font-weight:500;">– Sarah M., AI Researcher</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="John">
+          <div>
+            <div class="testimonial-bubble">"Hours of scrolling, gone. Now my best chats are exactly where I need them."</div>
+            <div style="color:#45a049;font-weight:500;">– John D., Consultant</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Maya">
+          <div>
+            <div class="testimonial-bubble">"The simplest way to build a second brain for my AI research."</div>
+            <div style="color:#45a049;font-weight:500;">– Maya K., Marketer</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="download" style="text-align:center;padding-top:0;">
+      <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Supercharge Your Memory — Free Forever</h2>
+      <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome Now</a>
+      <p style="margin-top:1rem;color:#555;">Upgrade to Premium anytime. No credit card required.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="bottom">© 2025 The Memory Mate. Built for thinkers, creators and doers.</div>
+    </div>
+  </footer>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    const heroShots = [
+      'screenshots/screenshot1.png',
+      'screenshots/screenshot2.png',
+      'screenshots/screenshot3.png'
+    ];
+    const heroImg = document.getElementById('hero-screenshot');
+    let shotIndex = 0;
+    setInterval(() => {
+      shotIndex = (shotIndex + 1) % heroShots.length;
+      if (heroImg) heroImg.src = heroShots[shotIndex];
+    }, 4000);
+  </script>
+</body>
+</html>
