@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
-  <meta name="description" content="Save your favorite AI chatbot answers in one click. Memory Mate organizes, tags and finds them instantly, boosting productivity and building your second brain.">
+  <meta name="description" content="Save your favorite AI chatbot answers in one click. Memory Mate organizes, tags and finds them instantly, giving you a 10× productivity boost and building your second brain.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
@@ -79,6 +79,9 @@
       display: block;
       margin: 0 auto 0.5rem;
     }
+    .list-check { list-style: none; padding: 0; text-align: left; max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.6; }
+    .list-check li { position: relative; padding-left: 1.6rem; }
+    .list-check i { position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; color: #4CAF50; }
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; margin-top: 2rem; }
     .card-feature {
       background: #fff;
@@ -139,7 +142,7 @@
   <header class="container">
     <nav>
       <div class="flex items-center gap-2">
-        <img src="logo/icon-48.png" width="72" height="72" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
+        <img src="logo/logo.png" width="96" height="96" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
         <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
       </div>
       <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('main-menu').classList.toggle('open');">&#9776;</button>
@@ -154,11 +157,10 @@
   <main class="container">
     <section class="hero">
       <div class="hero-text">
-        <h1>Lock Every AI Insight in Seconds—Reuse It Forever.</h1>
-        <p class="lead">Clip the exact answers you need from ChatGPT, Gemini, Claude, or Perplexity and pull them back in &lt;1&nbsp;s—complete with source &amp; timestamp.</p>
+        <h1>Your AI Second Brain—Instant Recall</h1>
+        <p class="lead">Save any reply from ChatGPT, Gemini, Claude or Perplexity in one click and find it again before your coffee cools. Enjoy a 10× boost now—100× once our roadmap lands.</p>
         <a href="#" class="btn-primary">Add to Chrome — Free Forever</a>
         <small>Zero forms. Data stored only locally.</small>
-        <p style="margin-top:0.5rem;font-size:0.95rem;">Boost productivity 10× today—upgrades push you toward 100× tomorrow.</p>
       </div>
       <div class="hero-img">
         <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Memory Mate extension screenshot">
@@ -195,30 +197,30 @@
           <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
         </div>
         <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
-        <ul style="list-style:none;padding:0;text-align:left;max-width:720px;margin:0 auto 1.5rem;line-height:1.6;">
-          <li><strong>Capture answers from 4 web‑LLMs:</strong> Clip any reply from ChatGPT, Gemini, Claude, or Perplexity—only the gold, no full-page noise.</li>
-          <li><strong>Organise in “Projects”:</strong> Pick a folder; every clip drops in sorted so research stays tidy.</li>
-          <li><strong>Auto-source + timestamp:</strong> We save the URL and exact time so future-you knows where facts came from.</li>
-          <li><strong>Import external files:</strong> Add TXT & HTML now; DOCX for Pro—consolidate scattered notes.</li>
-          <li><strong>Export any project:</strong> Push to TXT/HTML now; DOCX for Pro—share or back up as needed.</li>
+        <ul class="list-check">
+          <li><i data-lucide="check-circle"></i><strong>Capture answers from 4 web‑LLMs</strong> – Clip any reply from ChatGPT, Gemini, Claude, or Perplexity—only the gold, no full-page noise.</li>
+          <li><i data-lucide="check-circle"></i><strong>Organise in “Projects”</strong> – Pick a folder; every clip drops in sorted so research stays tidy.</li>
+          <li><i data-lucide="check-circle"></i><strong>Auto-source + timestamp</strong> – We save the URL and exact time so future-you knows where facts came from.</li>
+          <li><i data-lucide="check-circle"></i><strong>Import external files</strong> – Add TXT & HTML now; DOCX for Pro—consolidate scattered notes.</li>
+          <li><i data-lucide="check-circle"></i><strong>Export any project</strong> – Push to TXT/HTML now; DOCX for Pro—share or back up as needed.</li>
         </ul>
 
         <h3 style="font-weight:600;margin-bottom:1rem;">Day-to-Day Benefits</h3>
-        <ul style="list-style:none;padding:0;text-align:left;max-width:720px;margin:0 auto 1.5rem;line-height:1.6;">
-          <li>Zero-friction capture—one click locks in just the part you need.</li>
-          <li>Reliable sourcing—built-in URL & timestamp keep citations honest.</li>
-          <li>Clean boundaries—clips land in the right project, never a dump pile.</li>
-          <li>Easy in/out—import old notes, export polished reports without extra tools.</li>
-          <li>Pro-tier convenience—Word support keeps Office-centric teammates in the loop.</li>
+        <ul class="list-check">
+          <li><i data-lucide="check-circle"></i>Zero-friction capture—one click locks in just the part you need.</li>
+          <li><i data-lucide="check-circle"></i>Reliable sourcing—built-in URL & timestamp keep citations honest.</li>
+          <li><i data-lucide="check-circle"></i>Clean boundaries—clips land in the right project, never a dump pile.</li>
+          <li><i data-lucide="check-circle"></i>Easy in/out—import old notes, export polished reports without extra tools.</li>
+          <li><i data-lucide="check-circle"></i>Pro-tier convenience—Word support keeps Office-centric teammates in the loop.</li>
         </ul>
         <p style="font-size:0.95rem;color:#555;max-width:720px;margin:0 auto 2rem;">Micro-proof: users report cutting research time by 30–50% after the first week.</p>
 
         <h3 style="font-weight:600;margin-bottom:1rem;">Near-Term Roadmap (Next 90–120 Days)</h3>
-        <ul style="list-style:none;padding:0;text-align:left;max-width:720px;margin:0 auto 1.5rem;line-height:1.6;">
-          <li><strong>Push to Notion / Obsidian / OneNote / Markdown</strong> – one click from any project keeps your PKM stack in sync.</li>
-          <li><strong>Answer + Project Tags</strong> – lightweight metadata for rapid search and cross-cut views.</li>
-          <li><strong>“Inject into prompt”</strong> – drop a saved clip or entire project straight into the chat box—no copy-paste gymnastics.</li>
-          <li><strong>Built-in RAG assistant</strong> – get prompts rewritten with relevant snippets so every chatbot remembers your research.</li>
+        <ul class="list-check">
+          <li><i data-lucide="clock"></i><strong>Push to Notion / Obsidian / OneNote / Markdown</strong> – one click from any project keeps your PKM stack in sync.</li>
+          <li><i data-lucide="clock"></i><strong>Answer + Project Tags</strong> – lightweight metadata for rapid search and cross-cut views.</li>
+          <li><i data-lucide="clock"></i><strong>“Inject into prompt”</strong> – drop a saved clip or entire project straight into the chat box—no copy-paste gymnastics.</li>
+          <li><i data-lucide="clock"></i><strong>Built-in RAG assistant</strong> – get prompts rewritten with relevant snippets so every chatbot remembers your research.</li>
         </ul>
         <p style="margin-top:1.5rem;"><a href="#" class="btn-primary">Add to Chrome — Free Forever</a></p>
         <small class="microcopy">Zero forms. Data stored only locally.</small>
@@ -238,9 +240,8 @@
       </div>
     </section>
     <section class="section" id="download" style="text-align:center;padding-top:0;">
-      <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready to lock in every breakthrough?</h2>
+      <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready for a 10× productivity boost?</h2>
       <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome — Free Forever</a>
-      <p style="margin-top:1rem;color:#555;">Remove anytime in two clicks—no data left behind.</p>
     </section>
   </main>
   <footer>
