@@ -61,7 +61,7 @@
     .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
     .hero-img { flex: 1 1 380px; text-align: center; position: relative; }
-    .hero-img img { width: 100%; max-width: 520px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .hero-img img { width: 100%; max-width: 600px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
     .section { padding: 4rem 0; }
     .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
     .step { flex: 1 1 280px; text-align: center; }
@@ -72,6 +72,12 @@
       color: #4CAF50;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
+    }
+    .benefit-icon {
+      width: 28px; height: 28px;
+      color: #4CAF50;
+      display: block;
+      margin: 0 auto 0.5rem;
     }
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; margin-top: 2rem; }
     .card-feature {
@@ -84,7 +90,7 @@
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
     .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
-    .feature-shots img { width: 100%; max-width: 400px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .feature-shots img { width: 100%; max-width: 460px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
     .testimonial { flex: 1 1 300px; display: flex; gap: 1rem; }
     .testimonial img { width: 44px; height: 44px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
@@ -133,7 +139,7 @@
   <header class="container">
     <nav>
       <div class="flex items-center gap-2">
-        <img src="logo/icon-48.png" width="56" height="56" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
+        <img src="logo/icon-48.png" width="72" height="72" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
         <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
       </div>
       <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('main-menu').classList.toggle('open');">&#9776;</button>
@@ -148,11 +154,11 @@
   <main class="container">
     <section class="hero">
       <div class="hero-text">
-        <h1>Your Personal AI Memory Vault—One Tap In, Instant Genius Out.</h1>
-        <p>Bank critical code, prompts and ideas today; withdraw them whenever inspiration strikes. Build a true second brain that never forgets.</p>
+        <h1>Lock Every AI Insight in Seconds—Reuse It Forever.</h1>
+        <p class="lead">Clip the exact answers you need from ChatGPT, Gemini, Claude, or Perplexity and pull them back in &lt;1&nbsp;s—complete with source &amp; timestamp.</p>
         <a href="#" class="btn-primary">Add to Chrome — Free Forever</a>
-        <small>Zero forms. 10-second install.</small>
-        <p style="margin-top:0.5rem;font-size:0.95rem;">Boost productivity 10× now—roadmap upgrades push you to 100×.</p>
+        <small>Zero forms. Data stored only locally.</small>
+        <p style="margin-top:0.5rem;font-size:0.95rem;">Boost productivity 10× today—upgrades push you toward 100× tomorrow.</p>
       </div>
       <div class="hero-img">
         <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Memory Mate extension screenshot">
@@ -175,55 +181,47 @@
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You’ll Love Memory Mate</h2>
       <h3 style="text-align:center;margin-top:2rem;">Core Wins</h3>
       <ul class="benefits" style="list-style:none;padding:0;margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
-        <li><h3>Instant Clip</h3><p>Press once. The answer’s yours—forever.</p></li>
-        <li><h3>Smart Tags</h3><p>No folders to juggle. We tag by topic for you.</p></li>
-        <li><h3>Lightning Search</h3><p>Find any snippet in < 1 s—no digging.</p></li>
-        <li><h3>Private Vault</h3><p>End-to-end encryption. Your data, your rules.</p></li>
+        <li><i data-lucide="mouse-pointer-click" class="benefit-icon"></i><h3>Instant Clip</h3><p>Press once. The answer’s yours—forever.</p></li>
+        <li><i data-lucide="tags" class="benefit-icon"></i><h3>Smart Tags</h3><p>No folders to juggle. We tag by topic for you.</p></li>
+        <li><i data-lucide="search" class="benefit-icon"></i><h3>Lightning Search</h3><p>Find any snippet in &lt; 1 s—no digging.</p></li>
+        <li><i data-lucide="shield" class="benefit-icon"></i><h3>Private Vault</h3><p>End-to-end encryption. Your data, your rules.</p></li>
       </ul>
       <h3 style="text-align:center;margin-top:2rem;">Bonus Wins</h3>
       <ul class="benefits" style="list-style:none;padding:0;margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
-        <li><h3>Works Everywhere</h3><p>ChatGPT, Gemini, Claude & more.</p></li>
+        <li><i data-lucide="globe" class="benefit-icon"></i><h3>Works Everywhere</h3><p>ChatGPT, Gemini, Claude &amp; more.</p></li>
       </ul>
       <section id="roadmap" class="roadmap" style="margin-top:3rem;text-align:center;">
         <div class="urgency" style="margin-top:0; margin-bottom:1.5rem;">
           <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
         </div>
-        <h3 style="font-weight:600;margin-bottom:1rem;">Your Path to 100× Productivity</h3>
-        <p class="lead" style="max-width:660px;margin:0 auto 1.5rem;">We publish our roadmap so you always know where Memory Mate is headed—and you can vote features forward. Join early to shape the future.</p>
+        <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
+        <ul style="list-style:none;padding:0;text-align:left;max-width:720px;margin:0 auto 1.5rem;line-height:1.6;">
+          <li><strong>Capture answers from 4 web‑LLMs:</strong> Clip any reply from ChatGPT, Gemini, Claude, or Perplexity—only the gold, no full-page noise.</li>
+          <li><strong>Organise in “Projects”:</strong> Pick a folder; every clip drops in sorted so research stays tidy.</li>
+          <li><strong>Auto-source + timestamp:</strong> We save the URL and exact time so future-you knows where facts came from.</li>
+          <li><strong>Import external files:</strong> Add TXT & HTML now; DOCX for Pro—consolidate scattered notes.</li>
+          <li><strong>Export any project:</strong> Push to TXT/HTML now; DOCX for Pro—share or back up as needed.</li>
+        </ul>
 
-        <div class="roadmap-row" style="text-align:left;">
-          <h3>🚀 Live Now</h3>
-          <ul>
-            <li><strong>One-Click Capture</strong> – Save any ChatGPT, Gemini, or Claude reply.</li>
-            <li><strong>Smart Tags & Projects</strong> – Auto-organised, zero manual filing.</li>
-            <li><strong>Lightning Search (< 1 s)</strong> – Retrieve answers faster than Ctrl + F.</li>
-            <li><strong>Private Vault</strong> – End-to-end encryption; your data, your rules.</li>
-          </ul>
-        </div>
+        <h3 style="font-weight:600;margin-bottom:1rem;">Day-to-Day Benefits</h3>
+        <ul style="list-style:none;padding:0;text-align:left;max-width:720px;margin:0 auto 1.5rem;line-height:1.6;">
+          <li>Zero-friction capture—one click locks in just the part you need.</li>
+          <li>Reliable sourcing—built-in URL & timestamp keep citations honest.</li>
+          <li>Clean boundaries—clips land in the right project, never a dump pile.</li>
+          <li>Easy in/out—import old notes, export polished reports without extra tools.</li>
+          <li>Pro-tier convenience—Word support keeps Office-centric teammates in the loop.</li>
+        </ul>
+        <p style="font-size:0.95rem;color:#555;max-width:720px;margin:0 auto 2rem;">Micro-proof: users report cutting research time by 30–50% after the first week.</p>
 
-        <div class="roadmap-row now-next" style="text-align:left;">
-          <h3>🟢 Next Up (Q3 2025)</h3>
-          <ul>
-            <li><strong>AI Summaries</strong> – One-sentence recaps auto-generated for every clip.</li>
-            <li><strong>Cross-Device Sync</strong> – Chrome, Edge, and mobile in perfect harmony.</li>
-            <li><strong>One-Click Export</strong> – Push highlights to Notion & Google Docs.</li>
-            <li><strong>Dark-Mode HUD</strong> – Save answers without breaking focus at night.</li>
-          </ul>
-          <p class="cta-note"><em>Vote in-product to move features higher—first 5 000 installers steer priority.</em></p>
-        </div>
-
-        <div class="roadmap-row" style="text-align:left;">
-          <h3>🔭 Later (2025 +)</h3>
-          <ul>
-            <li><strong>Team Workspaces</strong> – Shared vaults with role-based permissions.</li>
-            <li><strong>Ask-Your-Vault AI</strong> – Chat with your saved knowledge for instant answers.</li>
-            <li><strong>Automated Source Citations</strong> – One-click copy of original prompt & link.</li>
-            <li><strong>Offline Mode</strong> – Access your genius even without internet.</li>
-          </ul>
-        </div>
-
+        <h3 style="font-weight:600;margin-bottom:1rem;">Near-Term Roadmap (Next 90–120 Days)</h3>
+        <ul style="list-style:none;padding:0;text-align:left;max-width:720px;margin:0 auto 1.5rem;line-height:1.6;">
+          <li><strong>Push to Notion / Obsidian / OneNote / Markdown</strong> – one click from any project keeps your PKM stack in sync.</li>
+          <li><strong>Answer + Project Tags</strong> – lightweight metadata for rapid search and cross-cut views.</li>
+          <li><strong>“Inject into prompt”</strong> – drop a saved clip or entire project straight into the chat box—no copy-paste gymnastics.</li>
+          <li><strong>Built-in RAG assistant</strong> – get prompts rewritten with relevant snippets so every chatbot remembers your research.</li>
+        </ul>
         <p style="margin-top:1.5rem;"><a href="#" class="btn-primary">Add to Chrome — Free Forever</a></p>
-        <small class="microcopy">Zero forms. 10-second install. Shape the roadmap today.</small>
+        <small class="microcopy">Zero forms. Data stored only locally.</small>
       </section>
     </section>
     <section id="testimonials" class="section" style="padding-top:0;">
