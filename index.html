@@ -47,15 +47,16 @@
     }
     .hero {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap-reverse;
       gap: 2rem;
       padding: 3rem 0 4rem;
     }
     .hero-text { flex: 1 1 420px; }
     .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
-    .hero-img { flex: 1 1 380px; text-align: center; }
+    .hero-img { flex: 1 1 380px; text-align: center; position: relative; }
     .hero-img img { width: 100%; max-width: 420px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
     .section { padding: 4rem 0; }
     .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
@@ -68,7 +69,7 @@
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
     }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; margin-top: 2rem; }
     .card-feature {
       background: #fff;
       border: 1px solid #e6f4ea;
@@ -78,6 +79,8 @@
       transition: box-shadow 0.18s, transform 0.13s;
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
+    .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+    .feature-shots img { width: 100%; max-width: 340px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
     .testimonial { flex: 1 1 300px; display: flex; gap: 1rem; }
     .testimonial img { width: 44px; height: 44px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
@@ -92,6 +95,9 @@
     footer .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
     footer .bottom { margin-top: 1rem; color: #555; font-size: 0.85rem; }
     @media (max-width: 640px) {
+      .hero {
+        flex-direction: column-reverse;
+      }
       .hero-text { text-align: center; }
       .nav-links { display: none; }
     }
@@ -120,7 +126,7 @@
         <a href="#" class="btn-primary">Add to Chrome — It's Free</a>
       </div>
       <div class="hero-img">
-        <img src="screenshots/screenshot1.png" alt="Extension screenshot">
+        <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Extension screenshot">
       </div>
     </section>
     <section id="how" class="section">
@@ -167,6 +173,10 @@
           <p>Your knowledge vault syncs across devices—always within reach.</p>
         </div>
       </div>
+      <div class="feature-shots">
+        <img src="screenshots/screenshot2.png" alt="Organising answers">
+        <img src="screenshots/screenshot3.png" alt="Search and projects overview">
+      </div>
     </section>
     <section id="testimonials" class="section" style="padding-top:0;">
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Real Users, Real Results</h2>
@@ -212,6 +222,17 @@
   </footer>
   <script>
     if (window.lucide) lucide.createIcons();
+    const heroShots = [
+      'screenshots/screenshot1.png',
+      'screenshots/screenshot2.png',
+      'screenshots/screenshot3.png'
+    ];
+    const heroImg = document.getElementById('hero-screenshot');
+    let shotIndex = 0;
+    setInterval(() => {
+      shotIndex = (shotIndex + 1) % heroShots.length;
+      if (heroImg) heroImg.src = heroShots[shotIndex];
+    }, 4000);
   </script>
 </body>
 </html>
