@@ -1,5 +1,5 @@
 # The Memory Mate Website
 
-This repository contains a simple landing page for **The Memory Mate** Chrome extension. The page introduces the extension's key features and provides a call to action for installation.
+This repository contains an updated landing page for **The Memory Mate** Chrome extension. The page highlights the extension's features and encourages visitors to install it.
 
-Open `index.html` in your browser to view the page.
+Open `index.html` in your browser to preview the page locally.

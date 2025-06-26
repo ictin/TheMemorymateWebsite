@@ -1,119 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Memory Mate</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #333;
-  }
-  header {
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  header img {
-    width: 120px;
-  }
-  .hero {
-    text-align: center;
-    padding: 4rem 1rem;
-    background-color: #f9f9f9;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .btn-primary {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-  .btn-primary:hover {
-    background-color: #45a049;
-  }
-  .features {
-    padding: 3rem 1rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  .features h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
-  .feature {
-    margin-bottom: 1.5rem;
-  }
-  .feature h3 {
-    font-size: 1.5rem;
-    color: #4CAF50;
-    margin-bottom: 0.5rem;
-  }
-  .cta {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #f9f9f9;
-  }
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #eee;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+      background: #fff;
+      color: #1a2a1a;
+      min-height: 100vh;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      max-width: 72rem;
+      margin: auto;
+    }
+    header img {
+      width: 44px;
+      height: 44px;
+    }
+    .btn-primary {
+      background: #4CAF50;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 2px 18px rgba(76,175,80,0.09);
+      transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+    }
+    .btn-primary:hover {
+      background: #45a049;
+      box-shadow: 0 4px 24px rgba(69,160,73,0.14);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #444;
+      max-width: 32rem;
+      margin-bottom: 1.5rem;
+    }
+    .features {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      border: 1px solid #e6f4ea;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      background: #fff;
+      box-shadow: 0 1px 10px rgba(69,160,73,0.06);
+      transition: box-shadow 0.18s, transform 0.13s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 4px 26px rgba(76,175,80,0.13);
+      transform: translateY(-3px) scale(1.01);
+    }
+    footer {
+      background: #e9faee;
+      border-top: 1px solid #e6f4ea;
+      padding: 1.5rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <img src="logo/logo.png" alt="The Memory Mate logo">
-</header>
-<section class="hero">
-  <h1>Save and Organize Your Best AI Answers</h1>
-  <p>The Memory Mate lets you capture, group, and revisit the most valuable chatbot replies in a single click. Keep your knowledge at your fingertips and supercharge your workflow.</p>
-  <a href="#" class="btn-primary">Add to Chrome</a>
-</section>
-<section class="features">
-  <h2>Why You'll Love It</h2>
-  <div class="feature">
-    <h3>One-Click Capture</h3>
-    <p>Store any response from ChatGPT, Gemini, Claude, or Perplexity without the clutter. Only the details you want, saved instantly.</p>
-  </div>
-  <div class="feature">
-    <h3>Project-Based Organization</h3>
-    <p>Keep research tidy by dropping clips into the right project from the start—no more messy dumps.</p>
-  </div>
-  <div class="feature">
-    <h3>Reliable Sourcing</h3>
-    <p>Every saved answer includes the original chat link and timestamp so you always know where it came from.</p>
-  </div>
-  <div class="feature">
-    <h3>Import &amp; Export</h3>
-    <p>Bring in past notes or send a full project to TXT, HTML, or Word for seamless collaboration.</p>
-  </div>
-</section>
-<section class="cta">
-  <h2>Ready to Boost Your Browser Chats?</h2>
-  <p>Add The Memory Mate to Chrome today and turn scattered conversations into a powerful knowledge base.</p>
-  <a href="#" class="btn-primary">Get The Memory Mate</a>
-</section>
-<footer>
-  &copy; 2025 The Memory Mate
-</footer>
+  <header>
+    <div class="logo">
+      <img src="logo/logo.png" alt="The Memory Mate logo" />
+    </div>
+    <a href="#download" class="btn-primary">Add to Chrome</a>
+  </header>
+
+  <section class="hero">
+    <h1>Never Lose a Brilliant Answer Again</h1>
+    <p>Capture the best insights from ChatGPT, Gemini, Claude and Perplexity with a single click. Organise them by project and find them whenever you need.</p>
+    <a id="download" href="#" class="btn-primary">Add to Chrome — It’s Free</a>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>One-Click Capture</h3>
+      <p>Store any AI answer instantly—no copy-paste required.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Project Organisation</h3>
+      <p>Drop each clip into the right folder so research stays tidy.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Reliable Sourcing</h3>
+      <p>Every saved snippet includes the original link and timestamp.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Import &amp; Export</h3>
+      <p>Bring in old notes or export everything to TXT, HTML or Word.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Coming Soon</h3>
+      <p>Tagging, Notion sync and a built-in RAG assistant are on the way.</p>
+    </div>
+  </section>
+
+  <section class="hero" style="padding-top:2rem;">
+    <h2 style="font-size:2rem; margin-bottom:0.6rem;">Supercharge Your Memory</h2>
+    <p>Join 1,000+ professionals already turning chats into a personal knowledge hub.</p>
+    <a href="#" class="btn-primary">Get The Memory Mate</a>
+  </section>
+
+  <footer>
+    © 2025 The Memory Mate. Built for thinkers, creators and doers.
+  </footer>
 </body>
 </html>
