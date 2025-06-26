@@ -13,6 +13,8 @@
       color: #1a2a1a;
       min-height: 100vh;
       scroll-behavior: smooth;
+      margin: 0;
+      line-height: 1.6;
     }
     .fade-in {
       opacity: 0;
@@ -59,13 +61,18 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
       gap: 1rem;
     }
     .card-feature:hover {
       border: 1.5px solid #4CAF50;
       box-shadow: 0 4px 26px rgba(76,175,80,0.13);
       transform: translateY(-3px) scale(1.012);
+    }
+    .card-feature:hover .icon-circle {
+      background: #4CAF50;
+      color: #fff;
     }
     .icon-circle {
       width: 44px; height: 44px;
@@ -74,6 +81,7 @@
       background: #e9faee;
       color: #4CAF50;
       margin-bottom: 0.3rem;
+      transition: background 0.18s, color 0.18s;
     }
     .testimonial-bubble {
       background: #e9faee;
@@ -90,12 +98,10 @@
       border-top: 1.5px solid #e6f4ea;
     }
     @media (max-width: 900px) {
-      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .how-steps { flex-direction: column; gap: 2.4rem; align-items: center; }
     }
     @media (max-width: 640px) {
-      .feature-grid { grid-template-columns: 1fr; }
-      .how-steps { flex-direction: column; gap: 2.4rem; }
-      .hero-content { flex-direction: column; align-items: flex-start; }
+      .hero-content { flex-direction: column; align-items: center; text-align: center; }
       .hero-illustration { margin-top: 2rem; }
     }
   </style>
@@ -128,7 +134,7 @@
         </div>
       </div>
       <div class="w-full flex justify-center items-center md:w-auto fade-in fade-in-3 hero-illustration">
-        <img src="screenshots/screenshot1.png" alt="The Memory Mate screenshot" class="rounded-xl shadow-lg" style="max-width:340px;">
+        <img src="screenshots/screenshot1.png" alt="The Memory Mate screenshot" class="rounded-xl shadow-lg max-w-xs sm:max-w-sm md:max-w-md">
       </div>
     </section>
     <div class="section-divider"></div>
