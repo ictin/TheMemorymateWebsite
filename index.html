@@ -61,8 +61,10 @@
     .logo-text {
       color: #4CAF50;
       font-weight: 600;
-      font-size: 1.8rem;
+      font-size: 2rem;
       line-height: 1;
+      display: flex;
+      align-items: center;
     }
     .hero {
       display: flex;
@@ -87,6 +89,10 @@
     }
     .step:hover { transform: translateY(-3px); }
     .step:hover .icon-circle { background: #4CAF50; color: #fff; }
+    .step:hover .icon-circle svg * {
+      stroke: #fff !important;
+      fill: none !important;
+    }
     .icon-circle {
       width: 48px; height: 48px;
       border-radius: 999px;
@@ -118,6 +124,10 @@
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
     .card-feature:hover .icon-circle { background: #4CAF50; color: #fff; }
+    .card-feature:hover .icon-circle svg * {
+      stroke: #fff !important;
+      fill: none !important;
+    }
     .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
     .feature-shots img { width: 100%; max-width: 460px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
