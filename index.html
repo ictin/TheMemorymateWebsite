@@ -49,6 +49,21 @@
       box-shadow: 0 4px 24px rgba(69,160,73,0.14);
       transform: translateY(-2px) scale(1.02);
     }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .logo-wrap img {
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(76,175,80,0.06);
+    }
+    .logo-text {
+      color: #4CAF50;
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
     .hero {
       display: flex;
       align-items: center;
@@ -152,9 +167,9 @@
 <body>
   <header class="container">
     <nav>
-      <div class="flex items-center gap-2">
-        <img src="logo/logo.png" width="120" height="120" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
-        <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
+      <div class="logo-wrap">
+        <img src="logo/logo.png" width="56" height="56" alt="Memory Mate logo">
+        <span class="logo-text">Memory Mate</span>
       </div>
       <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('main-menu').classList.toggle('open');">&#9776;</button>
       <ul id="main-menu" class="menu">
@@ -278,6 +293,7 @@
         </div>
                 <h2 style="font-size:1.8rem;font-weight:600;margin-bottom:1.5rem;">Roadmap to 100× Productivity</h2>
                 <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
+        <div class="grid feature-grid gap-5">
           <div class="card-feature">
             <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" fill="#4CAF50"/><rect x="14" y="4" width="6" height="6" fill="#4CAF50"/><rect x="4" y="14" width="6" height="6" fill="#4CAF50"/><rect x="14" y="14" width="6" height="6" fill="#4CAF50"/></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Capture answers from 4 web‑LLMs</h4>
