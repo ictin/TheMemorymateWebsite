@@ -58,7 +58,7 @@
     .logo-text {
       color: #4CAF50;
       font-weight: 600;
-      font-size: 2rem;
+      font-size: 2.4rem;
       line-height: 1;
       display: flex;
       align-items: center;
@@ -85,13 +85,16 @@
       transition: transform 0.18s;
     }
     .step:hover { transform: translateY(-3px); }
-    .step:hover .icon-circle { color: #45a049; }
+    .step:hover .icon-circle {
+      background: #4CAF50;
+      color: #fff;
+    }
     .step:hover .icon-circle svg * {
       stroke: currentColor !important;
       fill: none !important;
     }
     .icon-circle {
-      width: 56px; height: 56px;
+      width: 64px; height: 64px;
       border-radius: 999px;
       background: #e9faee;
       color: #4CAF50;
@@ -120,7 +123,10 @@
       cursor: pointer;
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
-    .card-feature:hover .icon-circle { color: #45a049; }
+    .card-feature:hover .icon-circle {
+      background: #4CAF50;
+      color: #fff;
+    }
     .card-feature:hover .icon-circle svg * {
       stroke: currentColor !important;
       fill: none !important;
@@ -174,7 +180,7 @@
   <header class="container">
     <nav>
       <div class="logo-wrap">
-        <img src="logo/logo.png" width="72" height="72" alt="Memory Mate logo">
+        <img src="logo/logo.png" width="84" height="84" alt="Memory Mate logo">
         <span class="logo-text">Memory Mate</span>
       </div>
       <ul id="main-menu" class="menu">
