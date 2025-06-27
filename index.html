@@ -28,11 +28,8 @@
       align-items: center;
       gap: 1rem;
     }
-    .menu { display: none; position: absolute; right: 1rem; top: 60px; background: #fff; border: 1px solid #e6f4ea; border-radius: 0.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 0.75rem 1rem; }
-    .menu a { display: block; padding: 0.25rem 0; }
-    .menu.open { display: block; }
-    .nav-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
-    @media (min-width: 640px) { .menu { display: flex !important; position: static; background: none; border: none; box-shadow: none; flex-direction: row; gap: 2rem; } .menu a { padding: 0; } }
+    .menu { display: flex; gap: 2rem; }
+    .menu a { padding: 0.25rem 0; }
     .btn-primary {
       background: #4CAF50;
       color: #fff;
@@ -88,13 +85,13 @@
       transition: transform 0.18s;
     }
     .step:hover { transform: translateY(-3px); }
-    .step:hover .icon-circle { background: #4CAF50; color: #fff; }
+    .step:hover .icon-circle { color: #45a049; }
     .step:hover .icon-circle svg * {
-      stroke: #fff !important;
+      stroke: currentColor !important;
       fill: none !important;
     }
     .icon-circle {
-      width: 48px; height: 48px;
+      width: 56px; height: 56px;
       border-radius: 999px;
       background: #e9faee;
       color: #4CAF50;
@@ -123,9 +120,9 @@
       cursor: pointer;
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
-    .card-feature:hover .icon-circle { background: #4CAF50; color: #fff; }
+    .card-feature:hover .icon-circle { color: #45a049; }
     .card-feature:hover .icon-circle svg * {
-      stroke: #fff !important;
+      stroke: currentColor !important;
       fill: none !important;
     }
     .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
@@ -170,7 +167,6 @@
         flex-direction: column-reverse;
       }
       .hero-text { text-align: center; }
-      .menu { display: none; }
     }
   </style>
 </head>
@@ -178,10 +174,9 @@
   <header class="container">
     <nav>
       <div class="logo-wrap">
-        <img src="logo/logo.png" width="56" height="56" alt="Memory Mate logo">
+        <img src="logo/logo.png" width="72" height="72" alt="Memory Mate logo">
         <span class="logo-text">Memory Mate</span>
       </div>
-      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('main-menu').classList.toggle('open');">&#9776;</button>
       <ul id="main-menu" class="menu">
         <li><a href="#how">How it Works</a></li>
         <li><a href="#features">Features</a></li>
