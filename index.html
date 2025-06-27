@@ -6,7 +6,6 @@
   <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
   <meta name="description" content="Save your favorite AI chatbot answers in one click. Memory Mate organizes, tags and finds them instantly, giving you a 10× productivity boost and building your second brain.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -91,7 +90,7 @@
     }
     .list-check { list-style: none; padding: 0; text-align: left; max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.6; }
     .list-check li { position: relative; padding-left: 1.6rem; }
-    .list-check i { position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; color: #4CAF50; }
+    .list-check svg { position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; color: #4CAF50; }
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; margin-top: 2rem; }
     .card-feature {
       background: #fff;
@@ -227,38 +226,37 @@
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You’ll Love Memory Mate</h2>
       <div class="grid feature-grid gap-5" style="margin-top:2rem;">
         <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><i data-lucide="mouse-pointer-click"></i></div>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#4CAF50" opacity="0.13"/><path d="M5 5v14h14V5H5zm7 1v6m0 0l3-3m-3 3l-3-3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Instant Clip</h4>
           <p class="text-gray-600 text-base">Hit save once. Your golden answer is locked forever.</p>
         </div>
         <div class="card-feature fade-in fade-in-5">
-          <div class="icon-circle"><i data-lucide="tags"></i></div>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" fill="#4CAF50" opacity="0.13"></rect><path d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2" stroke="#4CAF50" stroke-width="1.7"></path><rect x="8" y="11" width="8" height="5" rx="1" fill="#4CAF50" opacity="0.17"></rect></svg></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Smart Tags</h4>
           <p class="text-gray-600 text-base">Skip manual sorting—topics and projects auto-tag themselves.</p>
         </div>
         <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><i data-lucide="search"></i></div>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="#4CAF50" opacity="0.13"></circle><circle cx="11" cy="11" r="7" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M21 21l-4.3-4.3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Quick Recall</h4>
           <p class="text-gray-600 text-base">Need it again? Search or filter and it's in front of you.</p>
         </div>
         <div class="card-feature fade-in fade-in-5">
-          <div class="icon-circle"><i data-lucide="shield"></i></div>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="4" fill="#4CAF50" opacity="0.13"></rect><path d="M12 15v2m0-2a2 2 0 100-4 2 2 0 000 4zm0-4v-2m0 10a8 8 0 100-16 8 8 0 000 16z" stroke="#4CAF50" stroke-width="1.7"></path></svg></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Private Vault</h4>
           <p class="text-gray-600 text-base">Everything stays on your machine, fully encrypted.</p>
         </div>
         <div class="card-feature fade-in fade-in-4">
-          <div class="icon-circle"><i data-lucide="globe"></i></div>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#4CAF50" opacity="0.13"></circle><path d="M2 16a10 10 0 0014-14" stroke="#4CAF50" stroke-width="1.7"></path><path d="M15 10.25a5.5 5.5 0 11-3.5-8.5" stroke="#4CAF50" stroke-width="1.7"></path><rect x="14" y="14" width="7" height="7" rx="2" fill="#4CAF50" opacity="0.17"></rect></svg></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Works Everywhere</h4>
           <p class="text-gray-600 text-base">Captures ChatGPT, Gemini, Claude, Perplexity, and beyond.</p>
         </div>
       </div>
-      <h3 style="font-weight:600;margin:2rem 0 1rem;text-align:center;">Day-to-Day Benefits</h3>
       <ul class="list-check">
-        <li><i data-lucide="check-circle"></i>Zero-friction capture—one click locks in just the part you need.</li>
-        <li><i data-lucide="check-circle"></i>Reliable sourcing—built-in URL & timestamp keep citations honest.</li>
-        <li><i data-lucide="check-circle"></i>Clean boundaries—clips land in the right project, never a dump pile.</li>
-        <li><i data-lucide="check-circle"></i>Easy in/out—import old notes, export polished reports without extra tools.</li>
-        <li><i data-lucide="check-circle"></i>Pro-tier convenience—Word support keeps Office-centric teammates in the loop.</li>
+        <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Zero-friction capture—one click locks in just the part you need.</li>
+        <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Reliable sourcing—built-in URL & timestamp keep citations honest.</li>
+        <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Clean boundaries—clips land in the right project, never a dump pile.</li>
+        <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Easy in/out—import old notes, export polished reports without extra tools.</li>
+        <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Pro-tier convenience—Word support keeps Office-centric teammates in the loop.</li>
       </ul>
       <p style="font-size:0.95rem;color:#555;max-width:720px;margin:0 auto;">Micro-proof: users report cutting research time by 30–50% after the first week.</p>
       <section id="roadmap" class="roadmap" style="margin-top:3rem;text-align:center;">
@@ -268,27 +266,27 @@
                 <h2 style="font-size:1.8rem;font-weight:600;margin-bottom:1.5rem;">Roadmap to 100× Productivity</h2>
                 <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="check-circle"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Capture answers from 4 web‑LLMs</h4>
             <p class="text-gray-600 text-base">Clip any reply from ChatGPT, Gemini, Claude, or Perplexity—only the gold, no full-page noise.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="check-circle"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Organise in “Projects”</h4>
             <p class="text-gray-600 text-base">Pick a folder; every clip drops in sorted so research stays tidy.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="check-circle"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Auto-source + timestamp</h4>
             <p class="text-gray-600 text-base">We save the URL and exact time so future-you knows where facts came from.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="check-circle"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Import external files</h4>
             <p class="text-gray-600 text-base">Add TXT &amp; HTML now; DOCX for Pro—consolidate scattered notes.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="check-circle"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4CAF50"></circle><path d="M6.5 10.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Export any project</h4>
             <p class="text-gray-600 text-base">Push to TXT/HTML now; DOCX for Pro—share or back up as needed.</p>
           </div>
@@ -296,22 +294,22 @@
         <h3 style="font-weight:600;margin-bottom:1rem;">Near-Term Roadmap (Next 90–120 Days)</h3>
         <div class="grid feature-grid gap-5">
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="clock"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="#4CAF50" opacity="0.13"></circle><circle cx="12" cy="12" r="9" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M12 7v5l3 1.5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Sync to Notion, Obsidian, OneNote or Markdown</h4>
             <p class="text-gray-600 text-base">One click keeps every project in sync with your PKM.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="clock"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="#4CAF50" opacity="0.13"></circle><circle cx="12" cy="12" r="9" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M12 7v5l3 1.5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Answer &amp; Project Tags</h4>
             <p class="text-gray-600 text-base">Tags make every clip instantly searchable.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="clock"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="#4CAF50" opacity="0.13"></circle><circle cx="12" cy="12" r="9" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M12 7v5l3 1.5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Inject into Prompt</h4>
             <p class="text-gray-600 text-base">Drop saved clips into a chat with zero copy‑paste.</p>
           </div>
           <div class="card-feature">
-            <div class="icon-circle"><i data-lucide="clock"></i></div>
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="#4CAF50" opacity="0.13"></circle><circle cx="12" cy="12" r="9" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M12 7v5l3 1.5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">RAG-Powered Assistant</h4>
             <p class="text-gray-600 text-base">Our AI surfaces the perfect snippet and rewrites your prompt for you.</p>
           </div>
@@ -350,7 +348,6 @@
     </div>
   </footer>
   <script>
-    if (window.lucide) lucide.createIcons();
     const heroShots = [
       'screenshots/screenshot1.png',
       'screenshots/screenshot2.png',
