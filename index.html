@@ -61,7 +61,7 @@
     .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
     .hero-img { flex: 1 1 380px; text-align: center; position: relative; }
-    .hero-img img { width: 100%; max-width: 650px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .hero-img img { width: 100%; max-width: 720px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
     .section { padding: 4rem 0; }
     .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
     .step { flex: 1 1 280px; text-align: center; }
@@ -72,6 +72,7 @@
       color: #4CAF50;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
+      transition: background 0.18s, color 0.18s;
     }
     .benefit-icon {
       width: 28px; height: 28px;
@@ -92,6 +93,7 @@
       transition: box-shadow 0.18s, transform 0.13s;
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
+    .card-feature:hover .icon-circle { background: #4CAF50; color: #fff; }
     .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
     .feature-shots img { width: 100%; max-width: 460px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
@@ -157,8 +159,8 @@
   <main class="container">
     <section class="hero">
       <div class="hero-text">
-        <h1>Your AI Second Brain—Instant Recall</h1>
-        <p class="lead">Clip any reply from ChatGPT, Gemini, Claude or Perplexity in one tap and pull it back whenever you need. Enjoy a 10× boost today—100× once our roadmap lands.</p>
+        <h1>Never Lose Another AI Breakthrough—Your Second Brain Awaits</h1>
+        <p class="lead">Save any answer from ChatGPT, Gemini, Claude or Perplexity in one click. Find it again before your coffee cools. That's a 10× boost today—on the path to a 100× second brain.</p>
         <a href="#" class="btn-primary">Add to Chrome — Free Forever</a>
         <small>Zero forms. Data stored only locally.</small>
       </div>
@@ -167,15 +169,15 @@
       </div>
     </section>
     <section class="pain-solution" style="text-align:center;padding:2rem 0;">
-      <h2>Stop Endless Chat-Scrolling.</h2>
-      <p>Clip answers once—keep them ready to use as you see fit.</p>
+      <h2>Stop Endless Chat-Scrolling</h2>
+      <p>Clip answers once—retrieve them in seconds whenever inspiration strikes.</p>
     </section>
     <section id="how" class="section">
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">How It Works</h2>
       <ol class="how-it-works" style="margin-top:2rem;list-style:none;padding:0;font-size:1.1rem;line-height:1.6;">
         <li><strong>Capture</strong> – Press the green icon on any answer.</li>
         <li><strong>Organise</strong> – Smart tags file it by project &amp; topic.</li>
-        <li><strong>Recall</strong> – Keep it and use as you see fit.</li>
+        <li><strong>Recall</strong> – Instant search resurfaces it in seconds.</li>
       </ol>
     </section>
     
@@ -185,35 +187,35 @@
         <div class="card-feature fade-in fade-in-4">
           <div class="icon-circle"><i data-lucide="mouse-pointer-click"></i></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Instant Clip</h4>
-          <p class="text-gray-600 text-base">Press once. The answer’s yours&mdash;forever.</p>
+          <p class="text-gray-600 text-base">Hit save once. Your golden answer is locked forever.</p>
         </div>
         <div class="card-feature fade-in fade-in-5">
           <div class="icon-circle"><i data-lucide="tags"></i></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Smart Tags</h4>
-          <p class="text-gray-600 text-base">No folders to juggle&mdash;we tag by topic for you.</p>
+          <p class="text-gray-600 text-base">Skip manual sorting—topics and projects auto-tag themselves.</p>
         </div>
         <div class="card-feature fade-in fade-in-4">
           <div class="icon-circle"><i data-lucide="search"></i></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Quick Recall</h4>
-          <p class="text-gray-600 text-base">Find any snippet in seconds.</p>
+          <p class="text-gray-600 text-base">Need it again? Search or filter and it's in front of you.</p>
         </div>
         <div class="card-feature fade-in fade-in-5">
           <div class="icon-circle"><i data-lucide="shield"></i></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Private Vault</h4>
-          <p class="text-gray-600 text-base">Stored locally and fully encrypted.</p>
+          <p class="text-gray-600 text-base">Everything stays on your machine, fully encrypted.</p>
         </div>
         <div class="card-feature fade-in fade-in-4">
           <div class="icon-circle"><i data-lucide="globe"></i></div>
           <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Works Everywhere</h4>
-          <p class="text-gray-600 text-base">ChatGPT, Gemini, Claude &amp; more.</p>
+          <p class="text-gray-600 text-base">Captures ChatGPT, Gemini, Claude, Perplexity, and beyond.</p>
         </div>
       </div>
       <section id="roadmap" class="roadmap" style="margin-top:3rem;text-align:center;">
         <div class="urgency" style="margin-top:0; margin-bottom:1.5rem;">
           <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
         </div>
-        <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
-        <div class="grid feature-grid gap-5">
+                <h2 style="font-size:1.8rem;font-weight:600;margin-bottom:1.5rem;">Roadmap to 100× Productivity</h2>
+                <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
           <div class="card-feature">
             <div class="icon-circle"><i data-lucide="check-circle"></i></div>
             <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Capture answers from 4 web‑LLMs</h4>
@@ -290,8 +292,9 @@
       </div>
     </section>
     <section class="section" id="download" style="text-align:center;padding-top:0;">
-      <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready for a 10× productivity boost?</h2>
+        <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready for a 10× productivity boost?<span style="display:block;font-size:1rem;margin-top:0.4rem;">Ride the 100× wave as new features land.</span></h2>
       <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome — Free Forever</a>
+        <small class="microcopy">Zero forms. Remove anytime in two clicks.</small>
     </section>
   </main>
   <footer>
