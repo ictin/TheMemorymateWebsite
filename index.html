@@ -43,6 +43,7 @@
       font-size: 1rem;
       transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
       display: inline-block;
+      cursor: pointer;
     }
     .btn-primary:hover, .btn-primary:focus-visible {
       background: #45a049;
@@ -73,6 +74,7 @@
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
       transition: background 0.18s, color 0.18s;
+      cursor: pointer;
     }
     .benefit-icon {
       width: 28px; height: 28px;
@@ -91,6 +93,7 @@
       padding: 1.75rem 1.25rem;
       box-shadow: 0 1px 8px rgba(69,160,73,0.06);
       transition: box-shadow 0.18s, transform 0.13s;
+      cursor: pointer;
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
     .card-feature:hover .icon-circle { background: #4CAF50; color: #fff; }
@@ -174,11 +177,23 @@
     </section>
     <section id="how" class="section">
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">How It Works</h2>
-      <ol class="how-it-works" style="margin-top:2rem;list-style:none;padding:0;font-size:1.1rem;line-height:1.6;">
-        <li><strong>Capture</strong> – Press the green icon on any answer.</li>
-        <li><strong>Organise</strong> – Smart tags file it by project &amp; topic.</li>
-        <li><strong>Recall</strong> – Instant search resurfaces it in seconds.</li>
-      </ol>
+      <div class="how-steps" style="margin-top:2rem;">
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="save"></i></div>
+          <h3>Capture</h3>
+          <p>Press the green icon on any answer.</p>
+        </div>
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="folder-open"></i></div>
+          <h3>Organise</h3>
+          <p>Smart tags file it by project &amp; topic.</p>
+        </div>
+        <div class="step">
+          <div class="icon-circle"><i data-lucide="search"></i></div>
+          <h3>Recall</h3>
+          <p>Instant search resurfaces it in seconds.</p>
+        </div>
+      </div>
     </section>
     
     <section id="features" class="section">
