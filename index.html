@@ -178,11 +178,22 @@
     footer { background: linear-gradient(90deg, #e9faee 60%, #f7fdf8 100%); border-top: 1px solid #e6f4ea; padding: 2rem 0; margin-top: 4rem; }
     footer .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
     footer .bottom { margin-top: 1rem; color: #555; font-size: 0.85rem; }
-    @media (max-width: 640px) {
-      .hero {
-        flex-direction: column-reverse;
-      }
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      nav { flex-wrap: wrap; }
+      .menu { flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+      .hero { flex-direction: column-reverse; }
       .hero-text { text-align: center; }
+      .logo-text { font-size: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .menu { flex-direction: column; align-items: center; }
+      .hero-text h1 { font-size: 2rem; }
+      .hero-text p { font-size: 1.05rem; }
+      .logo-wrap img { width: 72px; height: 72px; }
+      .logo-text { font-size: 1.7rem; }
+      .how-steps { flex-direction: column; align-items: center; }
+      .testimonials { flex-direction: column; }
     }
   </style>
 </head>
