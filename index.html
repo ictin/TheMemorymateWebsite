@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Memory Mate – Save Your Best AI Answers Instantly</title>
+  <meta name="description" content="Save your favorite AI chatbot answers in one click. Memory Mate organizes, tags and finds them instantly, giving you a 10× productivity boost and building your second brain.">
+  <meta name="keywords" content="AI answers, chatbot notes, productivity extension, second brain">
+  <meta property="og:title" content="The Memory Mate – Save Your Best AI Answers Instantly">
+  <meta property="og:description" content="Save and organize AI replies with one click. Build your second brain and recall insights in seconds.">
+  <meta property="og:image" content="logo/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thememorymate.example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Memory Mate – Save Your Best AI Answers Instantly">
+  <meta name="twitter:description" content="Save and organize AI chatbot answers effortlessly. Reclaim knowledge and boost productivity.">
+  <meta name="twitter:image" content="logo/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -28,8 +38,8 @@
       align-items: center;
       gap: 1rem;
     }
-    .nav-links { display: none; gap: 2rem; }
-    @media (min-width: 640px) { .nav-links { display: flex; } }
+    .menu { display: flex; gap: 2rem; }
+    .menu a { padding: 0.25rem 0; }
     .btn-primary {
       background: #4CAF50;
       color: #fff;
@@ -39,11 +49,29 @@
       font-size: 1rem;
       transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
       display: inline-block;
+      cursor: pointer;
     }
     .btn-primary:hover, .btn-primary:focus-visible {
       background: #45a049;
       box-shadow: 0 4px 24px rgba(69,160,73,0.14);
       transform: translateY(-2px) scale(1.02);
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .logo-wrap img {
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(76,175,80,0.06);
+    }
+    .logo-text {
+      color: #4CAF50;
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
     }
     .hero {
       display: flex;
@@ -57,18 +85,43 @@
     .hero-text h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
     .hero-img { flex: 1 1 380px; text-align: center; position: relative; }
-    .hero-img img { width: 100%; max-width: 420px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .hero-img img { width: 100%; max-width: 720px; height: auto; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
     .section { padding: 4rem 0; }
     .how-steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
-    .step { flex: 1 1 280px; text-align: center; }
+    .step {
+      flex: 1 1 280px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.18s;
+    }
+    .step:hover { transform: translateY(-3px); }
+    .step:hover .icon-circle {
+      background: #4CAF50;
+      color: #fff;
+    }
+    .step:hover .icon-circle svg * {
+      stroke: currentColor !important;
+      fill: none !important;
+    }
     .icon-circle {
-      width: 48px; height: 48px;
+      width: 64px; height: 64px;
       border-radius: 999px;
       background: #e9faee;
       color: #4CAF50;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
+      transition: background 0.18s, color 0.18s;
+      cursor: pointer;
     }
+    .benefit-icon {
+      width: 28px; height: 28px;
+      color: #4CAF50;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+    .list-check { list-style: none; padding: 0; text-align: left; max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.6; }
+    .list-check li { position: relative; padding-left: 1.6rem; }
+    .list-check svg { position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; color: #4CAF50; }
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem; margin-top: 2rem; }
     .card-feature {
       background: #fff;
@@ -77,10 +130,19 @@
       padding: 1.75rem 1.25rem;
       box-shadow: 0 1px 8px rgba(69,160,73,0.06);
       transition: box-shadow 0.18s, transform 0.13s;
+      cursor: pointer;
     }
     .card-feature:hover { box-shadow: 0 4px 20px rgba(76,175,80,0.13); transform: translateY(-3px); }
+    .card-feature:hover .icon-circle {
+      background: #4CAF50;
+      color: #fff;
+    }
+    .card-feature:hover .icon-circle svg * {
+      stroke: currentColor !important;
+      fill: none !important;
+    }
     .feature-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
-    .feature-shots img { width: 100%; max-width: 340px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .feature-shots img { width: 100%; max-width: 460px; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
     .testimonials { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
     .testimonial { flex: 1 1 300px; display: flex; gap: 1rem; }
     .testimonial img { width: 44px; height: 44px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
@@ -91,123 +153,249 @@
       box-shadow: 0 2px 8px rgba(76,175,80,0.08);
       font-size: 0.95rem;
     }
+    .urgency {
+      background: #fffbe6;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      margin: 3rem auto 0;
+      max-width: 480px;
+      font-size: 1rem;
+    }
+    .flashing-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 0.4rem;
+      border-radius: 50%;
+      background: #ff2d55;
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
     footer { background: linear-gradient(90deg, #e9faee 60%, #f7fdf8 100%); border-top: 1px solid #e6f4ea; padding: 2rem 0; margin-top: 4rem; }
     footer .links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
     footer .bottom { margin-top: 1rem; color: #555; font-size: 0.85rem; }
-    @media (max-width: 640px) {
-      .hero {
-        flex-direction: column-reverse;
-      }
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      nav { flex-wrap: wrap; }
+      .menu { flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+      .hero { flex-direction: column-reverse; }
       .hero-text { text-align: center; }
-      .nav-links { display: none; }
+      .logo-text { font-size: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .menu { flex-direction: column; align-items: center; }
+      .hero-text h1 { font-size: 2rem; }
+      .hero-text p { font-size: 1.05rem; }
+      .logo-wrap img { width: 72px; height: 72px; }
+      .logo-text { font-size: 1.7rem; }
+      .how-steps { flex-direction: column; align-items: center; }
+      .testimonials { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <header class="container">
     <nav>
-      <div class="flex items-center gap-2">
-        <img src="logo/icon-48.png" width="40" height="40" alt="Memory Mate logo" style="border-radius:50%; box-shadow:0 2px 8px rgba(76,175,80,0.06);">
-        <span style="color:#4CAF50;font-weight:600;font-size:1.4rem;">Memory Mate</span>
+      <div class="logo-wrap">
+        <img src="logo/logo.png" width="84" height="84" alt="Memory Mate logo">
+        <span class="logo-text">Memory Mate</span>
       </div>
-      <div class="nav-links">
-        <a href="#how">How it Works</a>
-        <a href="#features">Features</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#download" class="btn-primary">Add to Chrome</a>
-      </div>
+      <ul id="main-menu" class="menu">
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#download" class="btn-primary">Add to Chrome</a></li>
+      </ul>
     </nav>
   </header>
   <main class="container">
     <section class="hero">
       <div class="hero-text">
-        <h1>Every Genius Answer, One Click Away</h1>
-        <p>The Memory Mate saves, organises and surfaces your favourite AI replies so you never lose a spark of insight.</p>
-        <a href="#" class="btn-primary">Add to Chrome — It's Free</a>
+        <h1>Never Lose Another AI Breakthrough—Your Second Brain Awaits</h1>
+        <p class="lead">Save any answer from ChatGPT, Gemini, Claude or Perplexity in one click. Find it again before your coffee cools. That's a 10× boost today—on the path to a 100× second brain.</p>
+        <a href="#" class="btn-primary">Add to Chrome — Free Forever</a>
+        <small>Zero forms. Data stored only locally.</small>
       </div>
       <div class="hero-img">
-        <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Extension screenshot">
+        <img id="hero-screenshot" src="screenshots/screenshot1.png" alt="Memory Mate extension screenshot">
       </div>
+    </section>
+    <section class="pain-solution" style="text-align:center;padding:2rem 0;">
+      <h2>Stop Endless Chat-Scrolling</h2>
+      <p>Clip answers once—retrieve them in seconds whenever inspiration strikes.</p>
     </section>
     <section id="how" class="section">
       <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">How It Works</h2>
       <div class="how-steps" style="margin-top:2rem;">
         <div class="step">
-          <div class="icon-circle"><i data-lucide="save"></i></div>
-          <h3>Capture Instantly</h3>
-          <p>A single click stores any answer from ChatGPT, Gemini, Claude or Perplexity.</p>
+          <div class="icon-circle">
+            <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+              <ellipse cx="17" cy="17" rx="14" ry="13" fill="#fff" stroke="#4CAF50" stroke-width="2" />
+              <circle cx="17" cy="14" r="3" fill="#4CAF50" opacity="0.8" />
+              <rect x="22" y="7" width="6" height="8" rx="2" fill="#4CAF50" stroke="#45a049" stroke-width="1" />
+              <path d="M24 9V13L25.8 11.7L28 13V9" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Capture</h3>
+          <p>Press the green icon on any answer.</p>
         </div>
         <div class="step">
-          <div class="icon-circle"><i data-lucide="folder-open"></i></div>
-          <h3>Organise Effortlessly</h3>
-          <p>Drop clips into projects for tidy research and friction‑free retrieval.</p>
+          <div class="icon-circle">
+            <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+              <rect x="6" y="13" width="22" height="14" rx="4" fill="#fff" stroke="#4CAF50" stroke-width="2" />
+              <rect x="10" y="8" width="8" height="8" rx="2" fill="#4CAF50" stroke="#45a049" stroke-width="1" />
+              <path d="M16 8l2.5 4" stroke="#45a049" stroke-width="1.2" />
+            </svg>
+          </div>
+          <h3>Organise</h3>
+          <p>Smart tags file it by project &amp; topic.</p>
         </div>
         <div class="step">
-          <div class="icon-circle"><i data-lucide="search"></i></div>
-          <h3>Find Anything</h3>
-          <p>Powerful search and timestamps help you recall any snippet in seconds.</p>
+          <div class="icon-circle">
+            <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+              <circle cx="17" cy="17" r="15" fill="#fff" stroke="#4CAF50" stroke-width="2" />
+              <path d="M17 22l3.5-6h-2.5l2-6-6 8h3l-2 4z" fill="#4CAF50" />
+              <circle cx="24" cy="24" r="5" fill="#e9faee" stroke="#45a049" stroke-width="1.2" />
+              <path d="M27 27l3 3" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Recall</h3>
+          <p>Instant search resurfaces it in seconds.</p>
         </div>
       </div>
     </section>
+    
     <section id="features" class="section">
-      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You'll Love The Memory Mate</h2>
-      <div class="feature-grid">
-        <div class="card-feature">
-          <h4 style="margin-bottom:0.5rem;font-weight:600;">One‑Click Capture</h4>
-          <p>Save the best AI answers without clutter or copy‑paste hassle.</p>
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Why You’ll Love Memory Mate</h2>
+      <div class="grid feature-grid gap-5" style="margin-top:2rem;">
+        <div class="card-feature fade-in fade-in-4">
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="#4CAF50" opacity="0.13"/><path d="M5 5v14h14V5H5zm7 1v6m0 0l3-3m-3 3l-3-3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">One‑Click Capture</h4>
+          <p class="text-gray-600 text-base">Save crucial answers without breaking your flow.</p>
+        </div>
+        <div class="card-feature fade-in fade-in-5">
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" fill="#4CAF50" opacity="0.13"></rect><path d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2" stroke="#4CAF50" stroke-width="1.7"></path><rect x="8" y="11" width="8" height="5" rx="1" fill="#4CAF50" opacity="0.17"></rect></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Smart Tags</h4>
+          <p class="text-gray-600 text-base">Skip manual sorting—topics and projects auto‑tag themselves.</p>
+        </div>
+        <div class="card-feature fade-in fade-in-4">
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="#4CAF50" opacity="0.13"></circle><circle cx="11" cy="11" r="7" stroke="#4CAF50" stroke-width="1.7" fill="none"></circle><path d="M21 21l-4.3-4.3" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Quick Recall</h4>
+          <p class="text-gray-600 text-base">Find any snippet in seconds with lightning search.</p>
+        </div>
+        <div class="card-feature fade-in fade-in-5">
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="4" fill="#4CAF50" opacity="0.13"></rect><path d="M12 15v2m0-2a2 2 0 100-4 2 2 0 000 4zm0-4v-2m0 10a8 8 0 100-16 8 8 0 000 16z" stroke="#4CAF50" stroke-width="1.7"></path></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Private Vault</h4>
+          <p class="text-gray-600 text-base">Everything stays on your machine—your knowledge, your rules.</p>
+        </div>
+        <div class="card-feature fade-in fade-in-4">
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#4CAF50" opacity="0.13"></circle><path d="M2 16a10 10 0 0014-14" stroke="#4CAF50" stroke-width="1.7"></path><path d="M15 10.25a5.5 5.5 0 11-3.5-8.5" stroke="#4CAF50" stroke-width="1.7"></path><rect x="14" y="14" width="7" height="7" rx="2" fill="#4CAF50" opacity="0.17"></rect></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Works Everywhere</h4>
+          <p class="text-gray-600 text-base">Clip ChatGPT, Gemini, Claude, Perplexity—and more.</p>
         </div>
         <div class="card-feature">
-          <h4 style="margin-bottom:0.5rem;font-weight:600;">Project Organisation</h4>
-          <p>Keep research neatly grouped by client, course or topic.</p>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a4 4 0 010-6l2-2a4 4 0 016 6l-1 1" stroke="#4CAF50" stroke-width="1.7" fill="none"/><path d="M14 11a4 4 0 010 6l-2 2a4 4 0 01-6-6l1-1" stroke="#4CAF50" stroke-width="1.7" fill="none"/></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Reliable Sourcing</h4>
+          <p class="text-gray-600 text-base">Built‑in URL and timestamp keep citations honest.</p>
         </div>
         <div class="card-feature">
-          <h4 style="margin-bottom:0.5rem;font-weight:600;">Auto‑Source & Timestamp</h4>
-          <p>Every clip remembers where and when it came from.</p>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" fill="#4CAF50" opacity="0.13"/><path d="M7 10l4 4 6-6" stroke="#4CAF50" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Clean Boundaries</h4>
+          <p class="text-gray-600 text-base">Every clip lands in the right project—never a dump pile.</p>
         </div>
         <div class="card-feature">
-          <h4 style="margin-bottom:0.5rem;font-weight:600;">Import & Export</h4>
-          <p>Bring in old notes or share entire projects as TXT, HTML or Word.</p>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 17v4h8v-4m-4-10v10" stroke="#4CAF50" stroke-width="1.7" fill="none" stroke-linecap="round"/><path d="M8 7l4-4 4 4" stroke="#4CAF50" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Easy In/Out</h4>
+          <p class="text-gray-600 text-base">Import old notes and export polished reports fast.</p>
         </div>
         <div class="card-feature">
-          <h4 style="margin-bottom:0.5rem;font-weight:600;">Cross‑Platform Power</h4>
-          <p>Your knowledge vault syncs across devices—always within reach.</p>
+          <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" fill="#4CAF50" opacity="0.13"/><path d="M7 8l1.5 8L12 9l3.5 7 1.5-8" stroke="#4CAF50" stroke-width="1.7" stroke-linejoin="round" fill="none"/></svg></div>
+          <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Pro‑Tier Convenience</h4>
+          <p class="text-gray-600 text-base">Word support keeps Office-centric teams in the loop.</p>
         </div>
       </div>
-      <div class="feature-shots">
-        <img src="screenshots/screenshot2.png" alt="Organising answers">
-        <img src="screenshots/screenshot3.png" alt="Search and projects overview">
-      </div>
+      <p style="font-size:0.95rem;color:#555;max-width:720px;margin:0 auto;">Micro-proof: users report cutting research time by 30–50% after the first week.</p>
+      <section id="roadmap" class="roadmap" style="margin-top:3rem;text-align:center;">
+        <div class="urgency" style="margin-top:0; margin-bottom:1.5rem;">
+          <p><span class="flashing-dot"></span> 1 new install every 3 minutes — join before Pro pricing launches.</p>
+        </div>
+                <h2 style="font-size:1.8rem;font-weight:600;margin-bottom:1.5rem;">Roadmap to 100× Productivity</h2>
+                <h3 style="font-weight:600;margin-bottom:1rem;">Live Now</h3>
+        <div class="grid feature-grid gap-5">
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" fill="#4CAF50"/><rect x="14" y="4" width="6" height="6" fill="#4CAF50"/><rect x="4" y="14" width="6" height="6" fill="#4CAF50"/><rect x="14" y="14" width="6" height="6" fill="#4CAF50"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Capture answers from 4 web‑LLMs</h4>
+            <p class="text-gray-600 text-base">Clip any reply from ChatGPT, Gemini, Claude, or Perplexity—only the gold, no full-page noise.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v7a2 2 0 002 2h14a2 2 0 002-2V11" stroke="#4CAF50" stroke-width="1.7" fill="none"/><path d="M3 11l3-3h5l3 3h8" stroke="#4CAF50" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Organise in “Projects”</h4>
+            <p class="text-gray-600 text-base">Pick a folder; every clip drops in sorted so research stays tidy.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#4CAF50" stroke-width="1.7" fill="none"/><path d="M12 7v5l3 1.5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Auto-source + timestamp</h4>
+            <p class="text-gray-600 text-base">We save the URL and exact time so future-you knows where facts came from.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"/><path d="M5 12l7-7 7 7" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Import external files</h4>
+            <p class="text-gray-600 text-base">Add TXT &amp; HTML now; DOCX for Pro—consolidate scattered notes.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"/><path d="M5 12l7 7 7-7" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Export any project</h4>
+            <p class="text-gray-600 text-base">Push to TXT/HTML now; DOCX for Pro—share or back up as needed.</p>
+          </div>
+        </div>
+        <h3 style="font-weight:600;margin-bottom:1rem;">Near-Term Roadmap (Next 90–120 Days)</h3>
+        <div class="grid feature-grid gap-5">
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m7-7H5" stroke="#4CAF50" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Sync to Notion, Obsidian, OneNote or Markdown</h4>
+            <p class="text-gray-600 text-base">One click keeps every project in sync with your PKM.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12l4-4 4 4-4 4-4-4z" stroke="#4CAF50" stroke-width="1.7" fill="none"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Answer &amp; Project Tags</h4>
+            <p class="text-gray-600 text-base">Tags make every clip instantly searchable.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="#4CAF50" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">Inject into Prompt</h4>
+            <p class="text-gray-600 text-base">Drop saved clips into a chat with zero copy‑paste.</p>
+          </div>
+          <div class="card-feature">
+            <div class="icon-circle"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.09 6.26L21 9.27l-4.91 3.58L17.18 21 12 17.77 6.82 21l1.09-8.15L3 9.27l6.91-1.01L12 3z" stroke="#4CAF50" stroke-width="1.3" fill="none"/></svg></div>
+            <h4 class="font-semibold text-lg text-[#1a2a1a] mb-1">RAG-Powered Assistant</h4>
+            <p class="text-gray-600 text-base">Our AI surfaces the perfect snippet and rewrites your prompt for you.</p>
+          </div>
+        </div>
+        <p style="margin-top:1.5rem;"><a href="#" class="btn-primary">Add to Chrome — Free Forever</a></p>
+        <small class="microcopy">Zero forms. Data stored only locally.</small>
+      </section>
     </section>
     <section id="testimonials" class="section" style="padding-top:0;">
-      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Real Users, Real Results</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Sarah">
-          <div>
-            <div class="testimonial-bubble">"Memory Mate is a lifesaver—I finally stopped losing great answers!"</div>
-            <div style="color:#45a049;font-weight:500;">– Sarah M., AI Researcher</div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="John">
-          <div>
-            <div class="testimonial-bubble">"Hours of scrolling, gone. Now my best chats are exactly where I need them."</div>
-            <div style="color:#45a049;font-weight:500;">– John D., Consultant</div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=facearea&w=128&h=128&facepad=2&q=80" alt="Maya">
-          <div>
-            <div class="testimonial-bubble">"The simplest way to build a second brain for my AI research."</div>
-            <div style="color:#45a049;font-weight:500;">– Maya K., Marketer</div>
-          </div>
-        </div>
+      <h2 style="font-size:1.8rem;font-weight:600;text-align:center;">Join 2&nbsp;300+ creators who reclaimed their genius.</h2>
+      <div class="testimonials" style="margin-top:2rem;display:flex;flex-direction:column;gap:1.5rem;">
+        <blockquote style="background:#e9faee;padding:1rem 1.2rem;border-radius:1rem;">
+          “Memory Mate cut my research time in half—my boss thinks I’m psychic.”
+          <cite style="display:block;margin-top:0.5rem;color:#45a049;font-style:normal;font-weight:500;">Laura T., Product Manager</cite>
+        </blockquote>
+        <blockquote style="background:#e9faee;padding:1rem 1.2rem;border-radius:1rem;">
+          “Installed during lunch, saved three proposals by dinner.”
+          <cite style="display:block;margin-top:0.5rem;color:#45a049;font-style:normal;font-weight:500;">Hiro S., Freelance Copywriter</cite>
+        </blockquote>
       </div>
     </section>
     <section class="section" id="download" style="text-align:center;padding-top:0;">
-      <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Supercharge Your Memory — Free Forever</h2>
-      <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome Now</a>
-      <p style="margin-top:1rem;color:#555;">Upgrade to Premium anytime. No credit card required.</p>
+        <h2 style="font-size:2rem;font-weight:600;margin-bottom:1rem;">Ready for a 10× productivity boost?<span style="display:block;font-size:1rem;margin-top:0.4rem;">Ride the 100× wave as new features land.</span></h2>
+      <a href="#" class="btn-primary" style="font-size:1.1rem;">Add to Chrome — Free Forever</a>
+        <small class="microcopy">Zero forms. Remove anytime in two clicks.</small>
     </section>
   </main>
   <footer>
@@ -217,11 +405,10 @@
         <a href="#">Terms</a>
         <a href="#">Contact</a>
       </div>
-      <div class="bottom">© 2025 The Memory Mate. Built for thinkers, creators and doers.</div>
+      <div class="bottom">© 2025 The Memory Mate. Made by humans who hate re-typing answers.</div>
     </div>
   </footer>
   <script>
-    if (window.lucide) lucide.createIcons();
     const heroShots = [
       'screenshots/screenshot1.png',
       'screenshots/screenshot2.png',
