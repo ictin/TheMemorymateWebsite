@@ -22,7 +22,7 @@
       margin: 0;
       font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
       color: #1a2a1a;
-      background: #fff;
+      background: linear-gradient(180deg,#f8fff9 0%,#e9faee 100%);
       line-height: 1.6;
       scroll-behavior: smooth;
     }
@@ -38,8 +38,27 @@
       align-items: center;
       gap: 1rem;
     }
-    .menu { display: flex; gap: 2rem; }
-    .menu a { padding: 0.25rem 0; }
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 2rem;
+    }
+    .menu a {
+      display: inline-block;
+      padding: 0.45rem 0.8rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      color: #4CAF50;
+    }
+    .menu a.btn-primary {
+      color: #fff !important;
+    }
+    .menu a:not(.btn-primary):hover,
+    .menu a:not(.btn-primary):focus-visible {
+      background: #e9faee;
+    }
     .btn-primary {
       background: #4CAF50;
       color: #fff;
